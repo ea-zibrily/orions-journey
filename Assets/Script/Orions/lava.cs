@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class lava : MonoBehaviour
 {
@@ -23,6 +24,12 @@ public class lava : MonoBehaviour
         if(other.tag == ("Player")){
             player.SetActive(false);
             this.enabled = false;
+            Invoke("restart", 0.5f);
         }
+    }
+
+    void restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

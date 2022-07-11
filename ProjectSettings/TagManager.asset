@@ -7,6 +7,8 @@ TagManager:
   - Platform
   - lava
   - coin
+  - GM
+  - checkpoint
   layers:
   - Default
   - TransparentFX
