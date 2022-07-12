@@ -1124,9 +1124,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29627a380bab4834c95ebfb0174efb57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weaponPrefabs:
+  - {fileID: 8257234356331658501, guid: 0bede7e645064394093930afe9098be2, type: 3}
+  - {fileID: 7740782027239234809, guid: e0d8586fa4fed5845b7ddd3eb06d83a4, type: 3}
+  - {fileID: 1474016394425674348, guid: 39a2bd68f6d6cc94c863f01db08b007a, type: 3}
   coin: 0
   coinUI: {fileID: 138702357}
-  LastCheckPointPos: {x: 0, y: -2.507308}
+  check: sudah cekpoing lur
 --- !u!1 &559102144
 GameObject:
   m_ObjectHideFlags: 0
@@ -3293,7 +3297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3166f7a7fd6f3e94ca8d612bbf9dbe33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oriManager: {fileID: 520164511}
 --- !u!61 &2057320536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3763,7 +3766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2272748069879981034
 MonoBehaviour:
   m_ObjectHideFlags: 0

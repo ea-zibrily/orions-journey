@@ -23,7 +23,7 @@ public class playerController : MonoBehaviour
 
     void Awake()
     {
-        aimTransform = transform.Find("Aim");
+        //aimTransform = transform.Find("Aim");
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -35,7 +35,9 @@ public class playerController : MonoBehaviour
 
         //aim
         Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
-        Vector3 aimDirection = (mousePosition - transform.position).normalized;
+        
+        //pindah ke script shoot
+        /*Vector3 aimDirection = (mousePosition - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
         aimTransform.eulerAngles = new Vector3(0, 0, angle);
 
@@ -46,7 +48,7 @@ public class playerController : MonoBehaviour
         } else {
             aimLocalScale.y = 1f;
         }
-        aimTransform.localScale = aimLocalScale;
+        aimTransform.localScale = aimLocalScale;*/
 
         //call flip method
         if(mousePosition.x > transform.position.x && facingRight){

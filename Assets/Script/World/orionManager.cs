@@ -5,6 +5,10 @@ using TMPro;
 
 public class orionManager : MonoBehaviour
 {
+    [Header("Weapon Selection")]
+    public GameObject[] weaponPrefabs;
+    int weaponIndex;
+
     [Header ("Coin")]
     [SerializeField] public int coin;
     //gae text mesh ben ga pecah
@@ -16,6 +20,9 @@ public class orionManager : MonoBehaviour
 
     void Awake()
     {
+        weaponIndex = PlayerPrefs.GetInt("SelectedWeapon", 0);
+        Instantiate(weaponPrefabs[weaponIndex], transform);
+
         coin = PlayerPrefs.GetInt("totalCoin", 0);
         GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
         Debug.Log(check);
