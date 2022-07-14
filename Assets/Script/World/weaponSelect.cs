@@ -4,9 +4,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class weaponSelect : MonoBehaviour
 {
+    [Header ("Weapon Prefabs")]
     public GameObject[] weaponPrefabs;
     int selectedWeapon;
 
@@ -15,6 +17,12 @@ public class weaponSelect : MonoBehaviour
     public Button priceButton;
     public TextMeshProUGUI coinsUI;
     public int coin;
+
+    public GameObject yesOrNo;
+
+    [Header ("Anim")]
+    public Animator noCoinsAnim;
+    public Animator purchaseSuccess;
 
     void Awake(){
         selectedWeapon = PlayerPrefs.GetInt("SelectedWeapon", 0);
@@ -43,29 +51,9 @@ public class weaponSelect : MonoBehaviour
             Debug.Log("deleted");
         }
         if(Input.GetKeyDown(KeyCode.R)){
-            coin = 2;
+            coin = coin + 2;
             PlayerPrefs.SetInt("totalCoin", coin);
         }
-    }
-
-    public void Next(){
-        weaponPrefabs[selectedWeapon].SetActive(false);
-        ++selectedWeapon;
-        if(selectedWeapon == weaponPrefabs.Length){
-            selectedWeapon = 0;
-        }
-        weaponPrefabs[selectedWeapon].SetActive(true);
-        PlayerPrefs.SetInt("SelectedWeapon", selectedWeapon);
-    }
-
-    public void Back(){
-        weaponPrefabs[selectedWeapon].SetActive(false);
-        --selectedWeapon;
-        if(selectedWeapon == -1){
-            selectedWeapon = weaponPrefabs.Length - 1;
-        }
-        weaponPrefabs[selectedWeapon].SetActive(true);
-        PlayerPrefs.SetInt("SelectedWeapon", selectedWeapon);
     }
 
     public void ChangeWeapons(){
@@ -78,9 +66,6 @@ public class weaponSelect : MonoBehaviour
         weaponPrefabs[selectedWeapon].SetActive(false);
         selectedWeapon = weaponIndex;
         weaponPrefabs[selectedWeapon].SetActive(true);
-        if(weapon[selectedWeapon].isUnlocked == true){
-            PlayerPrefs.SetInt("SelectedWeapon", selectedWeapon);
-        }
         UpdateButton();
     }
 
@@ -88,24 +73,36 @@ public class weaponSelect : MonoBehaviour
         coinsUI.text = PlayerPrefs.GetInt("totalCoin", 0).ToString();
 
         if(weapon[selectedWeapon].price == 0){
-            priceButton.gameObject.SetActive(false);
+            priceButton.interactable = false;
+            priceButton.GetComponentInChildren<TextMeshProUGUI>().text = "Default";
         } else {
             priceButton.GetComponentInChildren<TextMeshProUGUI>().text = "Price : " + weapon[selectedWeapon].price;
             if(PlayerPrefs.GetInt("totalCoin", 0) < weapon[selectedWeapon].price){
-                priceButton.gameObject.SetActive(true);
-                priceButton.interactable = false;
-            } else {
-                priceButton.gameObject.SetActive(true);
                 priceButton.interactable = true;
+            } else {
+                priceButton.interactable = true;
+            }
+
+            if(weapon[selectedWeapon].isUnlocked == true && weapon[selectedWeapon].price > 0){
+                priceButton.interactable = false;
+                priceButton.GetComponentInChildren<TextMeshProUGUI>().text = "Purchased";
             }
         }
 
-        if(priceButton.interactable == false && weapon[selectedWeapon].isUnlocked == true){
-            priceButton.GetComponentInChildren<TextMeshProUGUI>().text = "Purchased";
+        if(weapon[selectedWeapon].isUnlocked == true){
+            PlayerPrefs.SetInt("SelectedWeapon", selectedWeapon);
         }
     }
 
-    public void Unlock(){
+    public void YesOrNo(){
+        if(PlayerPrefs.GetInt("totalCoin", 0) < weapon[selectedWeapon].price){
+            noCoinsAnim.SetTrigger("noCoins");
+        } else {
+            yesOrNo.gameObject.SetActive(true);
+        }
+    }
+
+    public void Yes(){
         int coins = PlayerPrefs.GetInt("totalCoin", 0);
         int price = weapon[selectedWeapon].price;
         
@@ -114,5 +111,16 @@ public class weaponSelect : MonoBehaviour
         PlayerPrefs.SetInt("selectedWeapon", selectedWeapon);
         weapon[selectedWeapon].isUnlocked = true;
         UpdateButton();
+        yesOrNo.gameObject.SetActive(false);
+        purchaseSuccess.SetTrigger("purchaseSuccess");
     }
+
+    public void No(){
+        yesOrNo.gameObject.SetActive(false);
+    }
+
+    public void Back(string sceneName){
+        SceneManager.LoadScene(sceneName);
+    }
+
 }
