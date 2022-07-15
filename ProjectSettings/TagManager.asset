@@ -9,6 +9,7 @@ TagManager:
   - coin
   - GM
   - checkpoint
+  - box
   layers:
   - Default
   - TransparentFX
