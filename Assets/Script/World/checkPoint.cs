@@ -5,6 +5,7 @@ using UnityEngine;
 public class checkPoint : MonoBehaviour
 {
     Animator myAnim;
+    public bool isCheck;
 
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class checkPoint : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             orionManager.LastCheckPointPos = transform.position;
+            isCheck = true;
             myAnim.SetTrigger("checkpoint");
         }
     }

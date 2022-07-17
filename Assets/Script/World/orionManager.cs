@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class orionManager : MonoBehaviour
 {
@@ -17,6 +18,10 @@ public class orionManager : MonoBehaviour
     [Header ("Checkpoint")]
     [SerializeField] public string check = "sudah cekpoing lur";
     [SerializeField] public static Vector2 LastCheckPointPos = new Vector2(0, -2.507308f);
+
+    [Header("Health")]
+    [SerializeField] public GameObject[] health;
+    [SerializeField] public int healthIndex;
 
     void Awake()
     {
@@ -40,11 +45,27 @@ public class orionManager : MonoBehaviour
             getCoin();
             Destroy(collision.gameObject);
         }
+
+        if(collision.CompareTag("enemy"))
+        {
+            orionHealth();
+        }
     }
 
     void getCoin()
     {
         coin++;
         PlayerPrefs.SetInt("totalCoin", coin);
+    }
+
+    void orionHealth()
+    {
+        healthIndex--;
+        if(healthIndex < 1)
+        {
+            healthIndex = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        health[healthIndex].SetActive(false);
     }
 }

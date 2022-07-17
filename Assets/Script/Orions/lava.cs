@@ -17,7 +17,7 @@ public class lava : MonoBehaviour
     void FixedUpdate(){
         transform.position = Vector2.MoveTowards(transform.position, 
             new Vector2(transform.position.x, endPosition), 
-            moveSpeed * Time.fixedDeltaTime);
+            moveSpeed * Time.fixedDeltaTime); 
     }
 
     void OnTriggerEnter2D(Collider2D other){
