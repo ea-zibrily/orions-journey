@@ -23,6 +23,9 @@ public class billy : MonoBehaviour
 
     void Update(){
         healthBar.value = health;
+        if(health <= 0){
+            
+        }
 
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 

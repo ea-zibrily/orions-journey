@@ -2,21 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class platformBilly : MonoBehaviour
+public class platformCheckpoint : MonoBehaviour
 {
-    private float randomSpawn;
-
-    public float nilaiXKiri;
-    public float nilaiXKanan;
-
     public float moveSpeed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        randomSpawn = Random.Range(nilaiXKiri, nilaiXKanan);
-        transform.position = new Vector2(randomSpawn, transform.position.y);
-    }
 
     // Update is called once per frame
     void FixedUpdate()

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2553859117782537310}
   m_Layer: 6
   m_Name: platformDown
-  m_TagString: Untagged
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691a989568a71694885557b1f19adf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nilaiXKiri: 1.56
+  nilaiXKiri: 0
   nilaiXKanan: 8.49
   moveSpeed: 2.5
 --- !u!50 &7801368223722658294
