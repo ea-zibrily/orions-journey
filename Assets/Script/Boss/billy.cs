@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class billy : MonoBehaviour
 {
@@ -11,12 +12,18 @@ public class billy : MonoBehaviour
     public Transform[] moveSpots;
     private int randomSpot;
 
+    public int health;
+    public Slider healthBar;
+
     void Start(){
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
+        healthBar.maxValue = health;
     }
 
     void Update(){
+        healthBar.value = health;
+
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
         if(Vector2.Distance(transform.position, moveSpots[randomSpot].position) < 0.2f){
@@ -27,5 +34,9 @@ public class billy : MonoBehaviour
                 waitTime -= Time.deltaTime;
             }
         }
+    }
+
+    public void TakingDamage(){
+        health--;
     }
 }

@@ -9,6 +9,9 @@ TagManager:
   - coin
   - GM
   - checkpoint
+  - Destroyer
+  - Boss
+  - Bullet
   layers:
   - Default
   - TransparentFX
