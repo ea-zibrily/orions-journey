@@ -12,14 +12,14 @@ public class billyLaser : MonoBehaviour
 
     public LayerMask layer;
     public float lineLength;
-
+    
     void Start(){
         isShooting = false;
         lr = GetComponent<LineRenderer>();
     }
 
     void Update(){
-        StartCoroutine("Shoot");
+        StartCoroutine(Shoot());
     }
 
     void Draw2DRay(Vector2 startPos, Vector2 endPos){

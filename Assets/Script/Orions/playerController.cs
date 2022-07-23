@@ -50,11 +50,13 @@ public class playerController : MonoBehaviour
         }
         aimTransform.localScale = aimLocalScale;*/
 
-        //call flip method
-        if(mousePosition.x > transform.position.x && facingRight){
-            flip();
-        }else if(mousePosition.x < transform.position.x && !facingRight){
-            flip();
+        if(Time.timeScale > 0){
+            //call flip method
+            if(mousePosition.x > transform.position.x && facingRight){
+                flip();
+            }else if(mousePosition.x < transform.position.x && !facingRight){
+                flip();
+            }
         }
     }
 

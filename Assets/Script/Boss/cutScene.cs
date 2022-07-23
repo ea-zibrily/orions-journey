@@ -24,6 +24,9 @@ public class cutScene : MonoBehaviour
 
     private PlayableDirector _cutScene;
 
+    [Header ("lava")]
+    public GameObject lava;
+
     void Awake(){
         bulletScript = bulletObject.GetComponent<bullet>();
 
@@ -46,16 +49,17 @@ public class cutScene : MonoBehaviour
         if(other.tag == "Player"){
             bulletScript.enabled = false;
             _cutScene.enabled = true;
+            lava.transform.position = new Vector2(lava.transform.position.x, 20f);
             Invoke("StartCutScene", waitBeforePlay);
         }
     }
 
     void StartCutScene(){
+        bulletScript.enabled = true;
         checkpointPlatform.enabled = true;
         spawner.SetActive(true);
         billyLaser.enabled = true;
         billy.enabled = true;
-        bulletScript.enabled = true;
         billyHP.SetActive(true);
     }
 }
