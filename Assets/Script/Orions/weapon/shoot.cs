@@ -21,24 +21,26 @@ public class shoot : MonoBehaviour
     }
 
     void Update(){
-        //aim
-        Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
-        Vector3 aimDirection = (mousePosition - transform.position).normalized;
-        float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
-        transform.eulerAngles = new Vector3(0, 0, angle);
+        if(Time.timeScale > 0){
+            //aim
+            Vector3 mousePosition = UtilsClass.GetMouseWorldPosition();
+            Vector3 aimDirection = (mousePosition - transform.position).normalized;
+            float angle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg;
+            transform.eulerAngles = new Vector3(0, 0, angle);
 
-        //weapon flip
-        Vector3 aimLocalScale = Vector3.one;
-        if(angle > 90 || angle < -90){
-            aimLocalScale.y = -1f;
-        } else {
-            aimLocalScale.y = 1f;
-        }
-        transform.localScale = aimLocalScale;
+            //weapon flip
+            Vector3 aimLocalScale = Vector3.one;
+            if(angle > 90 || angle < -90){
+                aimLocalScale.y = -1f;
+            } else {
+                aimLocalScale.y = 1f;
+            }
+            transform.localScale = aimLocalScale;
 
-        if(Input.GetMouseButtonDown(0)){
-            Shoot();
-            player.Launch(playerImpact);
+            if(Input.GetMouseButtonDown(0)){
+                Shoot();
+                player.Launch(playerImpact);
+            }
         }
     }
 

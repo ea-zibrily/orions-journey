@@ -12,11 +12,14 @@ TagManager:
   - box
   - lavacheckpoint
   - enemy
+  - Destroyer
+  - Boss
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - ground
