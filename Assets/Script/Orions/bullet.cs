@@ -14,7 +14,7 @@ public class bullet : MonoBehaviour
             //add enemy or others
         }
         //hit box
-        if (other.CompareTag("box"))
+        if(other.CompareTag("box"))
         {
             Destroy(other.gameObject);
             //other.gameObject.GetComponent<Collider2D>().enabled = false;

@@ -12,6 +12,9 @@ TagManager:
   - box
   - lavacheckpoint
   - enemy
+  - boss
+  - bullet
+  - cutscene
   layers:
   - Default
   - TransparentFX

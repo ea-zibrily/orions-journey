@@ -50,6 +50,11 @@ public class orionManager : MonoBehaviour
         {
             orionHealth();
         }
+
+        if (collision.CompareTag("boss"))
+        {
+            orionHealth();
+        }
     }
 
     void getCoin()
