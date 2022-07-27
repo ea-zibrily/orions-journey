@@ -51,7 +51,7 @@ public class orionManager : MonoBehaviour
             orionHealth();
         }
 
-        if (collision.CompareTag("boss"))
+        if (collision.CompareTag("Boss"))
         {
             orionHealth();
         }

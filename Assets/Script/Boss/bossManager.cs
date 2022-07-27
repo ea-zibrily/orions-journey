@@ -24,7 +24,7 @@ public class bossManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("bullet"))
+        if(collision.CompareTag("Bullet"))
         {
             hp -= 25;
             if (hp < 1)
