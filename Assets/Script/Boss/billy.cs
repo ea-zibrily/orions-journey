@@ -24,26 +24,39 @@ public class billy : MonoBehaviour
     public GameObject deathVfx;
     public GameObject spawnerPlatform;
 
+    [Header("Health")]
+    [SerializeField] public float hp;
+    [SerializeField] public float maxHP;
+    [SerializeField] public shoot shootDamage;
+    [SerializeField] public bool isDeath;
+
     public GameObject platform;
     private platformBilly platformBilly;
 
+    private void Awake()
+    {
+        hp = maxHP;
+    }
 
     void Start(){
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
-        healthBar.maxValue = health;
+        //healthBar.maxValue = health;
         
         billyLaser = GetComponent<billyLaser>();
         laser = GetComponent<LineRenderer>();
     }
 
     void Update(){
+        /*
         healthBar.value = health;
-        if(health <= 0){
+        
+        if(health < 1){
             laser.enabled = false;
             billyLaser.enabled = false;
             Invoke("Death", 2f);
         }
+        */
 
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
@@ -69,6 +82,22 @@ public class billy : MonoBehaviour
             Instantiate(deathVfx, transform.position, Quaternion.identity);
             billyHP.SetActive(false);
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            hp -= shootDamage.damageTaken;
+            if(hp < 1)
+            {
+                hp = 0;
+                isDeath = true;
+                laser.enabled = false;
+                billyLaser.enabled = false;
+                Invoke("Death", 2f);
+            }
         }
     }
 }

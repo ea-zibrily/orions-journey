@@ -7,13 +7,12 @@ public class bossManager : MonoBehaviour
     [Header ("Health")]
     [SerializeField] public float hp;
     [SerializeField] public float maxHp;
-    [SerializeField] public float damagetaken;
 
     //etc
     public bool bossDeath;
 
     //Ref
-    bossHPManager bossHP;
+    public shoot shootDamage;
     public goa goaOpen;
     public GameObject deathParticle;
 
@@ -26,7 +25,7 @@ public class bossManager : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
-            hp -= 25;
+            hp -= shootDamage.damageTaken;
             if (hp < 1)
             {
                 bossDeath = true;

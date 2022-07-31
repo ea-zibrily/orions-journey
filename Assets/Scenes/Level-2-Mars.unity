@@ -405,6 +405,7 @@ MonoBehaviour:
   bullet: {fileID: 5997077169907098339, guid: cecf6a0b7db9be34b98fbe160d7a15a2, type: 3}
   firePos: {fileID: 257224678}
   fireForce: 20
+  damageTaken: 25
 --- !u!1 &29167246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3381,6 +3382,7 @@ MonoBehaviour:
   maxHp: 120
   damagetaken: 25
   bossDeath: 0
+  shootDamage: {fileID: 21247508}
   goaOpen: {fileID: 18494286}
   deathParticle: {fileID: 6782433998676124913, guid: 4cbc3e7419ea2db4f839b23b34e282e8, type: 3}
 --- !u!320 &678199772

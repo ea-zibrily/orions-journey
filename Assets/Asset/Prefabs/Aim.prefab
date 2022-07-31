@@ -244,3 +244,4 @@ MonoBehaviour:
   bullet: {fileID: 5997077169907098339, guid: cecf6a0b7db9be34b98fbe160d7a15a2, type: 3}
   firePos: {fileID: 8257234355557257038}
   fireForce: 20
+  damageTaken: 25
