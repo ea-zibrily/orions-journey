@@ -41,14 +41,14 @@ public class billy : MonoBehaviour
     void Start(){
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
-        //healthBar.maxValue = health;
+        healthBar.maxValue = health;
         
         billyLaser = GetComponent<billyLaser>();
         laser = GetComponent<LineRenderer>();
     }
 
     void Update(){
-        /*
+        
         healthBar.value = health;
         
         if(health < 1){
@@ -56,7 +56,7 @@ public class billy : MonoBehaviour
             billyLaser.enabled = false;
             Invoke("Death", 2f);
         }
-        */
+        
 
         transform.position = Vector2.MoveTowards(transform.position, moveSpots[randomSpot].position, speed * Time.deltaTime);
 
@@ -84,7 +84,7 @@ public class billy : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    /*
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
@@ -100,4 +100,5 @@ public class billy : MonoBehaviour
             }
         }
     }
+    */
 }
