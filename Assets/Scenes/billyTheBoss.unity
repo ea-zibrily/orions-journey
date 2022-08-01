@@ -3333,7 +3333,7 @@ MonoBehaviour:
   bullet: {fileID: 5997077169907098339, guid: cecf6a0b7db9be34b98fbe160d7a15a2, type: 3}
   firePos: {fileID: 8358137}
   fireForce: 20
-  damageTaken: 0
+  damageTaken: 25
 --- !u!1 &916390636
 GameObject:
   m_ObjectHideFlags: 0
