@@ -9,8 +9,10 @@ public class bullet : MonoBehaviour
     private GameObject billyBoss;
 
     void Start(){
-        billyBoss = GameObject.Find("Billy");
+        /*
+        billyBoss = GameObject.Find("billy");
         billy = billyBoss.GetComponent<billy>();
+        */
     }
 
     void OnTriggerEnter2D(Collider2D other){
