@@ -15,7 +15,7 @@ public class boss1HPManager : MonoBehaviour
 
     private void Update()
     {
-        hpUI.fillAmount = bill.hp / bill.maxHP;
+        hpUI.fillAmount = bill.hp / bill.maxHp;
 
         if(effectUI.fillAmount > hpUI.fillAmount)
         {
@@ -26,7 +26,7 @@ public class boss1HPManager : MonoBehaviour
             effectUI.fillAmount = hpUI.fillAmount;
         }
 
-        hpText.text = bill.hp + (" / ") + bill.maxHP;
+        hpText.text = bill.hp + (" / ") + bill.maxHp;
     }
 
 }
