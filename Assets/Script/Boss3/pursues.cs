@@ -15,8 +15,11 @@ public class pursues : MonoBehaviour
     public float radius;
     public LayerMask whatisPursues;
 
-    //ref
+    [Header("Reference")]
     Rigidbody2D myRb;
+    public GameObject deathParticle;
+    public shoot damage;
+    public boss3Manager bossHp;
 
     private void Awake()
     {
@@ -35,6 +38,11 @@ public class pursues : MonoBehaviour
         if(isOnArea())
         {
             purAttack();
+        }
+
+        if(bossHp.isDeath)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -80,9 +88,17 @@ public class pursues : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player"))
+        switch(collision.gameObject.tag)
         {
-            Destroy(gameObject);
+            case "Player":
+                Instantiate(deathParticle, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+                break;
+            case "Bullet":
+                bossHp.hp -= damage.damageTaken;
+                Instantiate(deathParticle, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+                break;
         }
     }
 }

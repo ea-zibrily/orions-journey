@@ -7,17 +7,19 @@ public class gressor : MonoBehaviour
     [Header("Movement")]
     public float gresSpeed;
     Transform player;
+    public bool earlyMove;
 
     [Header("Attack Area")]
     public Transform gress;
     public float radiusGress;
-
-    public Transform playerArea;
-    public float radiusPlayer;
     public LayerMask whatisGress;
 
-    //ref
+    [Header("Reference")]
     Animator myAnim;
+    public GameObject deathParticle;
+    public shoot damage;
+    public boss3Manager bossHp;
+
     private void Awake()
     {
         myAnim = GetComponent<Animator>();
@@ -26,41 +28,47 @@ public class gressor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform; 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(therePlayerPos())
+        transform.position = Vector2.MoveTowards(transform.position, player.position, gresSpeed * Time.deltaTime);
+
+        if (therePlayerArea())
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, gresSpeed * Time.deltaTime);
+            myAnim.SetTrigger("attack");
+        }
+        else
+        {
+            myAnim.SetTrigger("idle");
         }
 
-        attack();
+        if (bossHp.isDeath)
+        {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 
-    bool therePlayerPos()
+    bool therePlayerArea()
     {
         return Physics2D.OverlapCircle(gress.position, radiusGress, whatisGress);
-    }
-
-    bool thereAPlayer()
-    {
-        return Physics2D.OverlapCircle(playerArea.position, radiusPlayer, whatisGress);
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(gress.position, radiusGress);
-        Gizmos.DrawWireSphere(playerArea.position, radiusPlayer);
     }
 
-    void attack()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(thereAPlayer())
+        if(collision.CompareTag("Bullet"))
         {
-            //myAnim.SetTrigger("attack");
+            bossHp.hp -= damage.damageTaken;
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }

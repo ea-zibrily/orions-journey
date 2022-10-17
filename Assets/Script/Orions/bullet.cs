@@ -24,6 +24,9 @@ public class bullet : MonoBehaviour
                 billy.TakingDamage();
                 Destroy(gameObject);
                 break;
+            case "Boss3":
+                Destroy(gameObject);
+                break;
             //add enemy or others
         }
         //hit box

@@ -5,11 +5,10 @@ using UnityEngine;
 public class skretchry : MonoBehaviour
 {
     [Header("Movement")]
-    public Transform wayPoint1;
-    public Transform wayPoint2;
+    public Transform[] wayPoint;
     Transform pointTarget;
     public float speed;
-    //int randomPoint; //blom kepake
+    int randomPoint;
 
     [Header("Attack Area")]
     public Transform skretchRange;
@@ -21,7 +20,10 @@ public class skretchry : MonoBehaviour
     float btweenShoot;
     public GameObject arrow;
 
-    //ref
+    [Header("Reference")]
+    public GameObject deathParticle;
+    public shoot damage;
+    public boss3Manager bossHp;
     SpriteRenderer mySp;
 
     void Awake()
@@ -31,40 +33,40 @@ public class skretchry : MonoBehaviour
     }
     void Start()
     {
-        /*
-        masi belum kepake dek
-        randomPoint = Random.Range(1, 4);
+        //<summary>
+        //pake random point biar arah gerak boss random
+        //</summary>
+        randomPoint = Random.Range(0, 3);
         switch(randomPoint)
         {
+            case 0:
+                pointTarget = wayPoint[0];
+                break;
             case 1:
-                pointTarget = wayPoint1;
+                pointTarget = wayPoint[1];
                 break;
             case 2:
-                pointTarget = wayPoint2;
+                pointTarget = wayPoint[2];
                 break;
             case 3:
-                pointTarget = wayPoint3;
-                break;
-            case 4:
-                pointTarget = wayPoint4;
+                pointTarget = wayPoint[3];
                 break;
             default:
-                Debug.Log("Eroro min");
+                Debug.Log("Eroro min.");
                 break;
         }
-        */
 
-        pointTarget = wayPoint1;
         btweenShoot = startTimeBtweenShoot;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //note
+        //<summary>
         //klo player ada di area tembak skretch, skretch bakal diem lur
         //begitu uga sebalikx
-        if(!thereAPlayer())
+        //</summary>
+        if (!thereAPlayer())
         {
             skretchMove();
         }
@@ -73,33 +75,55 @@ public class skretchry : MonoBehaviour
             shootPlayer();
         }
 
+        if (bossHp.isDeath)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void skretchMove()
     {
         transform.position = Vector2.MoveTowards(transform.position, pointTarget.position, speed * Time.deltaTime);
 
-        if(Vector2.Distance(transform.position, wayPoint1.position) <= 0.01f)
+        if(Vector2.Distance(transform.position, wayPoint[0].position) <= 0.01f)
         {
-            pointTarget = wayPoint2;
-            transform.localScale = new Vector2(1.8125f, transform.localScale.y);
+            pointTarget = wayPoint[1];
+            transform.localScale = new Vector2(1.4355f, transform.localScale.y);
 
             /*
             //karena gameobject terpisah jadi gabisa pake flip
             mySp.flipX = true;
             */
         }
-        if(Vector2.Distance(transform.position, wayPoint2.position) <= 0.01f)
+        if(Vector2.Distance(transform.position, wayPoint[1].position) <= 0.01f)
         {
-            pointTarget = wayPoint1;
-            transform.localScale = new Vector2(-1.8125f, transform.localScale.y);
+            pointTarget = wayPoint[2];
+            transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
+            /*
+            //karena gameobject terpisah jadi gabisa pake flip
+            //mySp.flipX = false;
+            */
+        }
+        if (Vector2.Distance(transform.position, wayPoint[2].position) <= 0.01f)
+        {
+            pointTarget = wayPoint[3];
+            transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
 
             /*
             //karena gameobject terpisah jadi gabisa pake flip
             //mySp.flipX = false;
             */
         }
-        
+        if (Vector2.Distance(transform.position, wayPoint[3].position) <= 0.01f)
+        {
+            pointTarget = wayPoint[0];
+            transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+
+            /*
+            //karena gameobject terpisah jadi gabisa pake flip
+            //mySp.flipX = false;
+            */
+        }
     }
 
     bool thereAPlayer()
@@ -122,6 +146,16 @@ public class skretchry : MonoBehaviour
         else
         {
             btweenShoot -= Time.deltaTime;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            bossHp.hp -= damage.damageTaken;
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 }
