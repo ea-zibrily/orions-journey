@@ -16,9 +16,9 @@ public class CamBilly : MonoBehaviour
         }
     }
 
-    void OnTriggerExit2D(Collider2D other){
-        if(other.gameObject.tag == "Player"){
-            anim.SetBool("Switch", false);
-        }
-    }
+    // void OnTriggerExit2D(Collider2D other){
+    //     if(other.gameObject.tag == "Player"){
+    //         anim.SetBool("Switch", false);
+    //     }
+    // }
 }

@@ -8,6 +8,8 @@ public class bullet : MonoBehaviour
     private billy billy;
     private GameObject billyBoss;
 
+    public ParticleSystem VFX;
+
     void Awake(){
         
         // billyBoss = GameObject.Find("Billy");
@@ -39,6 +41,10 @@ public class bullet : MonoBehaviour
         //     Destroy(other.gameObject);
         //     //other.gameObject.GetComponent<Collider2D>().enabled = false;
         // }
+    }
+
+    void OnDestroy(){
+        Instantiate(VFX, transform.position, Quaternion.identity);
     }
 
 }
