@@ -30,7 +30,7 @@ public class orionManager : MonoBehaviour
         Instantiate(weaponPrefabs[weaponIndex], transform);
 
         coin = PlayerPrefs.GetInt("totalCoin", 0);
-        // GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
+        GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
         Debug.Log(check);
     }
 
