@@ -42,10 +42,10 @@ public class billy : MonoBehaviour
 
     private void Awake()
     {
-        hp = maxHp;
     }
 
     void Start(){
+        hp = maxHp;
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
         // healthBar.maxValue = hp;

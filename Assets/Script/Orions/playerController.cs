@@ -21,8 +21,11 @@ public class playerController : MonoBehaviour
     //flip
     private bool facingRight;
 
+    private Animator anim;
+
     void Awake()
     {
+        anim = GetComponent<Animator>();
         //aimTransform = transform.Find("Aim");
         rb = GetComponent<Rigidbody2D>();
     }
@@ -65,12 +68,16 @@ public class playerController : MonoBehaviour
         //move
         var moveInput = Input.GetAxisRaw("Horizontal");
         if(moveInput != 0 && isGrounded){
+            anim.SetBool("isWalking", true);
             rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        }else{
+            anim.SetBool("isWalking", false);
         }
     }
 
     //launch Impact Player
     public void Launch(float force){
+        anim.SetTrigger("Impact");
         Vector2 dir = (UtilsClass.GetMouseWorldPosition() - transform.position).normalized * -1f;
         transform.GetComponent<Rigidbody2D>().velocity = dir * force;
     }

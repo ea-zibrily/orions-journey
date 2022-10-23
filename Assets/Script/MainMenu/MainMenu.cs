@@ -39,22 +39,24 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void Earth()
+    public void Earth(string sceneName)
     {
-        Debug.Log("Earth Pressed");
-    }
-
-    public void Mars()
-    {
-        Debug.Log("Mars Pressed");
+        SceneManager.LoadScene(sceneName);
 
     }
 
-    public void Jupiter()
+    public void Mars(string sceneName)
     {
+        SceneManager.LoadScene(sceneName);
 
-        Debug.Log("Jupiter Pressed");
     }
+
+    public void Jupiter(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+
+    }
+
 
     public void Shop(string sceneName)
     {

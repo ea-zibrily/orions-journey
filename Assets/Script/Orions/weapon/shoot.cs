@@ -16,7 +16,7 @@ public class shoot : MonoBehaviour
     public float fireForce;
     public int damage;
 
-    void Awake(){
+    void Start(){
         playerObj = GameObject.Find("Player");
         player = playerObj.GetComponent<playerController>();
     }
