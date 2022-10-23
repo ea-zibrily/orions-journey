@@ -97,7 +97,7 @@ public class billy : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            hp -= shootDamage.damageTaken;
+            hp -= shootDamage.damage;
             // if(hp < 1)
             // {
             //     hp = 0;
