@@ -17,6 +17,7 @@ TagManager:
   - Bullet
   - Boss2
   - Boss3
+  - Aim
   layers:
   - Default
   - TransparentFX

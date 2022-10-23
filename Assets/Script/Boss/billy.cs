@@ -29,7 +29,8 @@ public class billy : MonoBehaviour
     [Header ("Health")]
     [SerializeField] public float hp;
     [SerializeField] public float maxHp;
-    [SerializeField] public shoot shootDamage;
+    private shoot shootDamage;
+    private GameObject Aim;
     [SerializeField] public float hitSpeed;
     [SerializeField] public Image hpImage;
     [SerializeField] public Image effectImage;
@@ -45,6 +46,10 @@ public class billy : MonoBehaviour
     }
 
     void Start(){
+        Aim = GameObject.FindGameObjectWithTag("Aim");
+        shootDamage = Aim.GetComponent<shoot>();
+
+
         hp = maxHp;
         waitTime = startWaitTime;
         randomSpot = Random.Range(0, moveSpots.Length);
