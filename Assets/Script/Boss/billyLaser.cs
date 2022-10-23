@@ -13,6 +13,11 @@ public class billyLaser : MonoBehaviour
     public LayerMask layer;
     public float lineLength;
     
+    public Texture[] textures;
+    private int animationStep;
+    public float fps;
+    private float fpsCounter;
+    
     void Start(){
         isShooting = false;
         lr = GetComponent<LineRenderer>();
@@ -20,6 +25,18 @@ public class billyLaser : MonoBehaviour
 
     void Update(){
         StartCoroutine(Shoot());
+        
+        fpsCounter += Time.deltaTime;
+        if(fpsCounter >= 1f / fps){
+            animationStep++;
+            if(animationStep == textures.Length){
+                animationStep = 0;
+            }
+
+            lr.material.SetTexture("_MainTex", textures[animationStep]);
+
+            fpsCounter = 0f;
+        }
     }
 
     void Draw2DRay(Vector2 startPos, Vector2 endPos){

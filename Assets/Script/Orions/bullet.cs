@@ -8,11 +8,13 @@ public class bullet : MonoBehaviour
     private billy billy;
     private GameObject billyBoss;
 
-    void Start(){
-        /*
-        billyBoss = GameObject.Find("billy");
-        billy = billyBoss.GetComponent<billy>();
-        */
+    public ParticleSystem VFX;
+
+    void Awake(){
+        
+        // billyBoss = GameObject.Find("Billy");
+        // billy = billyBoss.GetComponent<billy>();
+        
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -21,7 +23,13 @@ public class bullet : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "Boss" :
-                billy.TakingDamage();
+                // billy.TakingDamage();
+                //boss2...
+                //boss3...
+                Destroy(gameObject);
+                break;
+            case "box":
+                Destroy(other.gameObject);
                 Destroy(gameObject);
                 break;
             case "Boss3":
@@ -30,12 +38,17 @@ public class bullet : MonoBehaviour
                 break;
             //add enemy or others
         }
+
         //hit box
-        if(other.CompareTag("box"))
-        {
-            Destroy(other.gameObject);
-            //other.gameObject.GetComponent<Collider2D>().enabled = false;
-        }
+        // if(other.CompareTag("box"))
+        // {
+        //     Destroy(other.gameObject);
+        //     //other.gameObject.GetComponent<Collider2D>().enabled = false;
+        // }
+    }
+
+    void OnDestroy(){
+        Instantiate(VFX, transform.position, Quaternion.identity);
     }
 
 }

@@ -17,7 +17,7 @@ public class orionManager : MonoBehaviour
 
     [Header ("Checkpoint")]
     [SerializeField] public string check = "sudah cekpoing lur";
-    //[SerializeField] public static Vector2 LastCheckPointPos = new Vector2(0, -2.507308f);
+    // [SerializeField] public static Vector2 LastCheckPointPos = new Vector2(0, -2.507308f);
     [SerializeField] public static Vector2 LastCheckPointPos;
 
     [Header("Health")]
