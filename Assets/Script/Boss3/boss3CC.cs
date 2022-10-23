@@ -6,16 +6,31 @@ using UnityEngine.Playables;
 public class boss3CC : MonoBehaviour
 {
     public PlayableDirector[] boss3;
+    public GameObject[] spawner;
     public GameObject hpPanel;
+    public GameObject mapLimit;
     public Animator boss3Anim;
     public float animTime;
     public bool csDone;
 
-    private void Awake()
+    private void Start()
     {
         for (int i = 0; i < 3; i++)
         {
             boss3[i].enabled = false;
+        }
+    }
+
+    private void Update()
+    {
+        if(csDone)
+        {
+            hpPanel.SetActive(true);
+            mapLimit.GetComponent<Collider2D>().enabled = true;
+
+            spawner[0].SetActive(true);
+            spawner[1].SetActive(true);
+            spawner[2].SetActive(true);
         }
     }
 
@@ -31,13 +46,6 @@ public class boss3CC : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            boss3Anim.SetTrigger("player");
-        }
-    }
     void skretchCam()
     {
         boss3Anim.SetTrigger("skretchry");
@@ -56,7 +64,6 @@ public class boss3CC : MonoBehaviour
     {
         csDone = true;
         boss3Anim.SetTrigger("arena");
-        hpPanel.SetActive(true);
     }
 
 

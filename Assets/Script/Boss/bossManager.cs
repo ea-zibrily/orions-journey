@@ -51,7 +51,7 @@ public class bossManager : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
-            hp -= shootDamage.damageTaken;
+            hp -= shootDamage.damage;
             if (hp < 1)
             {
                 bossDeath = true;

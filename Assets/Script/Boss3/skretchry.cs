@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Playables;
 public class skretchry : MonoBehaviour
 {
     [Header("Movement")]
-    public Transform[] wayPoint;
-    Transform pointTarget;
     public float speed;
+    Transform[] wayPoint = new Transform[4];
+    Transform pointTarget;
     int randomPoint;
 
     [Header("Attack Area")]
@@ -22,17 +22,27 @@ public class skretchry : MonoBehaviour
 
     [Header("Reference")]
     public GameObject deathParticle;
-    public shoot damage;
-    public boss3Manager bossHp;
+    GameObject bossMgrObj;
+    boss3Manager bossMgr;
     SpriteRenderer mySp;
 
     void Awake()
     {
         mySp = GetComponent<SpriteRenderer>();
-        Debug.Log("Lesgoo");
     }
     void Start()
     {
+        //way
+        wayPoint[0] = GameObject.Find("point1").transform;
+        wayPoint[1] = GameObject.Find("point2").transform;
+        wayPoint[2] = GameObject.Find("point3").transform;
+        wayPoint[3] = GameObject.Find("point4").transform;
+
+
+        //manager
+        bossMgrObj = GameObject.Find("Boss3");
+        bossMgr = bossMgrObj.GetComponent<boss3Manager>();
+
         //<summary>
         //pake random point biar arah gerak boss random
         //</summary>
@@ -75,10 +85,12 @@ public class skretchry : MonoBehaviour
             shootPlayer();
         }
 
-        if (bossHp.isDeath)
+        if (bossMgr.isDeath)
         {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+
     }
 
     void skretchMove()
@@ -153,7 +165,7 @@ public class skretchry : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            bossHp.hp -= damage.damageTaken;
+            bossMgr.hp -= bossMgr.shootDmg.damage;
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

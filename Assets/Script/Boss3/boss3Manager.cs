@@ -9,7 +9,7 @@ public class boss3Manager : MonoBehaviour
 
     [Header("Health")]
     public float maxHp;
-    [HideInInspector] public float hp;
+    public float hp;
     public float hitSpeed;
     public Image hpImage;
     public Image effectImage;
@@ -17,9 +17,9 @@ public class boss3Manager : MonoBehaviour
 
     [Header("Reference")]
     public bool isDeath;
-    public shoot damage;
     public GameObject deathParticle;
     public GameObject hpPanel;
+    public shoot shootDmg;
     public GameObject[] spawner;
 
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class boss3Manager : MonoBehaviour
     {
         hpImage.fillAmount = hp / maxHp;
 
-        if(effectImage.fillAmount > hpImage.fillAmount)
+        if (effectImage.fillAmount > hpImage.fillAmount)
         {
             effectImage.fillAmount -= hitSpeed;
         }
@@ -43,25 +43,17 @@ public class boss3Manager : MonoBehaviour
         }
 
         hpText.text = hp + ("/") + maxHp;
-    }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Bullet"))
+        //death condition
+        if (hp < 1)
         {
-            if(hp < 1)
+            isDeath = true;
+            hpPanel.SetActive(false);
+            for (int i = 0; i < 3; i++)
             {
-                isDeath = true;
-                hpPanel.SetActive(false);
-                for(int i = 0; i < 3; i++)
-                {
-                    spawner[i].gameObject.SetActive(false);
-                    /*
-                    Instantiate(deathParticle, transform.position, Quaternion.identity);
-                    Destroy(spawner[i].gameObject);
-                    */
-                }  
+                spawner[i].gameObject.SetActive(false);
             }
         }
     }
+
 }

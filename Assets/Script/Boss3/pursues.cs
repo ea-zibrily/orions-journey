@@ -6,7 +6,7 @@ public class pursues : MonoBehaviour
 {
     [Header("Movement")]
     public float purSpeed;
-    public Transform player;
+    Transform player;
     bool hasPlayerPos;
     Vector2 playerPos;
 
@@ -18,8 +18,8 @@ public class pursues : MonoBehaviour
     [Header("Reference")]
     Rigidbody2D myRb;
     public GameObject deathParticle;
-    public shoot damage;
-    public boss3Manager bossHp;
+    GameObject bossMgrObj;
+    boss3Manager bossMgr;
 
     private void Awake()
     {
@@ -28,8 +28,12 @@ public class pursues : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Lesgo Pursues!");
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         //hasPlayerPos = false;
+
+        //manager
+        bossMgrObj = GameObject.Find("Boss3");
+        bossMgr = bossMgrObj.GetComponent<boss3Manager>();
     }
 
     // Update is called once per frame
@@ -39,9 +43,10 @@ public class pursues : MonoBehaviour
         {
             purAttack();
         }
-
-        if(bossHp.isDeath)
+        
+        if(bossMgr.isDeath)
         {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
@@ -95,7 +100,7 @@ public class pursues : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "Bullet":
-                bossHp.hp -= damage.damageTaken;
+                bossMgr.hp -= bossMgr.shootDmg.damage;
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 break;

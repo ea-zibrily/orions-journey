@@ -8,7 +8,7 @@ public class bossIdle2 : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        boss = GameObject.FindGameObjectWithTag("Boss").GetComponent<orionBoss2>();
+        boss = GameObject.FindGameObjectWithTag("Boss2").GetComponent<orionBoss2>();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

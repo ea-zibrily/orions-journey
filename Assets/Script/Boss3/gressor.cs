@@ -7,7 +7,6 @@ public class gressor : MonoBehaviour
     [Header("Movement")]
     public float gresSpeed;
     Transform player;
-    public bool earlyMove;
 
     [Header("Attack Area")]
     public Transform gress;
@@ -17,8 +16,8 @@ public class gressor : MonoBehaviour
     [Header("Reference")]
     Animator myAnim;
     public GameObject deathParticle;
-    public shoot damage;
-    public boss3Manager bossHp;
+    GameObject bossMgrObj;
+    boss3Manager bossMgr;
 
     private void Awake()
     {
@@ -28,7 +27,14 @@ public class gressor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform; 
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        
+        //<summary>
+        //manager refs ada di start menyesuaikan isi variabel di scrip boss3Manager
+        //</summary>
+
+        bossMgrObj = GameObject.Find("Boss3");
+        bossMgr = bossMgrObj.GetComponent<boss3Manager>();
     }
 
     // Update is called once per frame
@@ -45,13 +51,13 @@ public class gressor : MonoBehaviour
             myAnim.SetTrigger("idle");
         }
 
-        if (bossHp.isDeath)
+        if (bossMgr.isDeath)
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+        
     }
-
     bool therePlayerArea()
     {
         return Physics2D.OverlapCircle(gress.position, radiusGress, whatisGress);
@@ -66,9 +72,10 @@ public class gressor : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
-            bossHp.hp -= damage.damageTaken;
+            bossMgr.hp -= bossMgr.shootDmg.damage;
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
+
 }

@@ -17,15 +17,12 @@ public class spawner : MonoBehaviour
     public GameObject gressObject;
     public GameObject skretchObject;
     public GameObject pursObject;
-    public boss3CC startSpawning;
+    public boss3CC cutScene;
 
     // Start is called before the first frame update
     void Start()
     {
-        if(startSpawning.csDone == true)
-        {
-            StartCoroutine(bossSpawnerCoroutine());
-        }
+        StartCoroutine(bossSpawnerCoroutine());
     }
 
     IEnumerator bossSpawnerCoroutine()

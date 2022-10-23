@@ -14,7 +14,7 @@ public class shoot : MonoBehaviour
     public GameObject bullet;
     public Transform firePos;
     public float fireForce;
-    public int damageTaken;
+    public int damage;
 
     void Awake(){
         playerObj = GameObject.Find("Player");

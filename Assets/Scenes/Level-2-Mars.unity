@@ -405,7 +405,7 @@ MonoBehaviour:
   bullet: {fileID: 5997077169907098339, guid: cecf6a0b7db9be34b98fbe160d7a15a2, type: 3}
   firePos: {fileID: 257224678}
   fireForce: 20
-  damageTaken: 25
+  damage: 20
 --- !u!1 &29167246
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,7 +3179,7 @@ GameObject:
   - component: {fileID: 678199772}
   m_Layer: 0
   m_Name: Boss2
-  m_TagString: Boss
+  m_TagString: Boss2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

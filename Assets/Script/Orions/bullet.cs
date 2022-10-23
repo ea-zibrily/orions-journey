@@ -25,7 +25,8 @@ public class bullet : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "Boss3":
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                Debug.Log("kehit coy");
                 break;
             //add enemy or others
         }
