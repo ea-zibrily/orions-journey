@@ -56,9 +56,14 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Jupiter Pressed");
     }
 
-    public void Shop()
+    public void Shop(string sceneName)
     {
-        Debug.Log("Shop Pressed");
+        SceneManager.LoadScene(sceneName);
 
+    }
+
+    public void LoadLevelSelect(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
