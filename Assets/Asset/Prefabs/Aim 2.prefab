@@ -45,11 +45,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0d753765b986a4f867602a4d2c2b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerImpact: 10
-  bullet: {fileID: 5997077169907098339, guid: cecf6a0b7db9be34b98fbe160d7a15a2, type: 3}
+  playerImpact: 15
+  bullet: {fileID: 5997077169907098339, guid: 85a31201fe4291d46bc621fd260fde4f, type: 3}
   firePos: {fileID: 1474016394657978407}
   fireForce: 20
-  damage: 35
+  damage: 40
 --- !u!1 &1474016394657978404
 GameObject:
   m_ObjectHideFlags: 0
@@ -59,6 +59,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1474016394657978407}
+  - component: {fileID: 3212339052595813847}
   m_Layer: 0
   m_Name: firePos
   m_TagString: Untagged
@@ -80,6 +81,19 @@ Transform:
   m_Father: {fileID: 1474016394425674351}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3212339052595813847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474016394657978404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d95d6ce8bd07b8f428e175223bf4e01f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 300
 --- !u!1 &7029554169953549381
 GameObject:
   m_ObjectHideFlags: 0

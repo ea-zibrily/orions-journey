@@ -20,7 +20,8 @@ public class bossManager : MonoBehaviour
     public bool bossDeath;
 
     //Ref
-    public shoot shootDamage;
+    private shoot shootDamage;
+    private GameObject Aim;
     public goa goaOpen;
     public GameObject deathParticle;
 
@@ -28,6 +29,11 @@ public class bossManager : MonoBehaviour
     {
         hp = maxHp;
         hpbarPanel.SetActive(false);
+    }
+
+    void Start(){
+        Aim = GameObject.FindGameObjectWithTag("Aim");
+        shootDamage = Aim.GetComponent<shoot>();
     }
 
     private void Update()

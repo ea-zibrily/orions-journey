@@ -1,7 +1,37 @@
 fileFormatVersion: 2
 guid: abe9344bbb1c1324cb9e19a206fb7bfc
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7603948226780701898
+    second: LaserGun_Burn._0
+  - first:
+      213: 257668212402267620
+    second: LaserGun_Burn._1
+  - first:
+      213: 2783731656885698113
+    second: LaserGun_Burn._2
+  - first:
+      213: 1243677316477446110
+    second: LaserGun_Burn._3
+  - first:
+      213: 7097405769325084339
+    second: LaserGun_Burn._4
+  - first:
+      213: 3642829315417533428
+    second: LaserGun_Burn._5
+  - first:
+      213: -9014330474891882011
+    second: LaserGun_Burn._6
+  - first:
+      213: -4631080471720349090
+    second: LaserGun_Burn._7
+  - first:
+      213: -4432312434214808868
+    second: LaserGun_Burn._8
+  - first:
+      213: -7888124829954888451
+    second: LaserGun_Burn._10
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -41,12 +71,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1200
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,9 +105,189 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: LaserGun_Burn._0
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 363
+        width: 539
+        height: 305
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b564c0069597690800000000000000
+      internalID: -7603948226780701898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaserGun_Burn._1
+      rect:
+        serializedVersion: 2
+        x: 2402
+        y: 365
+        width: 555
+        height: 305
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e5a52ebfdb639300800000000000000
+      internalID: 257668212402267620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaserGun_Burn._2
+      rect:
+        serializedVersion: 2
+        x: 4402
+        y: 363
+        width: 1601
+        height: 305
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14e7eae613dc1a620800000000000000
+      internalID: 2783731656885698113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaserGun_Burn._4
+      rect:
+        serializedVersion: 2
+        x: 6402
+        y: 363
+        width: 1610
+        height: 305
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3befd6b81fc0f7260800000000000000
+      internalID: 7097405769325084339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaserGun_Burn._5
+      rect:
+        serializedVersion: 2
+        x: 8402
+        y: 363
+        width: 1610
+        height: 305
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb67da36fded8230800000000000000
+      internalID: 3642829315417533428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaserGun_Burn._6
+      rect:
+        serializedVersion: 2
+        x: 10402
+        y: 348
+        width: 1610
+        height: 305
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1571c613aa6e280800000000000000
+      internalID: -9014330474891882011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaserGun_Burn._7
+      rect:
+        serializedVersion: 2
+        x: 12402
+        y: 363
+        width: 1610
+        height: 305
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e523cd4f8d81bbfb0800000000000000
+      internalID: -4631080471720349090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LaserGun_Burn._8
+      rect:
+        serializedVersion: 2
+        x: 14402
+        y: 363
+        width: 1598
+        height: 305
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd2541113534d72c0800000000000000
+      internalID: -4432312434214808868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

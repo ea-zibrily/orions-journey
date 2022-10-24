@@ -127,11 +127,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0d753765b986a4f867602a4d2c2b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerImpact: 7
-  bullet: {fileID: 5997077169907098339, guid: cecf6a0b7db9be34b98fbe160d7a15a2, type: 3}
+  playerImpact: 20
+  bullet: {fileID: 5997077169907098339, guid: 2ce2bc86a766e0a4f9247ab343dc6dc4, type: 3}
   firePos: {fileID: 7740782028076510898}
   fireForce: 20
-  damage: 20
+  damage: 50
 --- !u!1 &7740782028076510897
 GameObject:
   m_ObjectHideFlags: 0
