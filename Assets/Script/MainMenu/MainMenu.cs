@@ -42,7 +42,6 @@ public class MainMenu : MonoBehaviour
     public void Earth(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
-
     }
 
     public void Mars(string sceneName)
