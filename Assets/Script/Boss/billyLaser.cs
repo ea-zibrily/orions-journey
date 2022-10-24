@@ -17,6 +17,9 @@ public class billyLaser : MonoBehaviour
     private int animationStep;
     public float fps;
     private float fpsCounter;
+
+    [Header("Orion")]
+    public orionManager OrionScript;
     
     void Start(){
         isShooting = false;
@@ -52,7 +55,8 @@ public class billyLaser : MonoBehaviour
             
             if(hit){
                 
-                //player taking damage
+                //Take Damage
+                // OrionScript.orionHealth();
 
                 Draw2DRay(laserFirePoint.position, hit.point);
             } else {

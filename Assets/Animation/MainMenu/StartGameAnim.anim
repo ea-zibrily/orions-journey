@@ -1114,7 +1114,7 @@ AnimationClip:
   m_Events:
   - time: 2
     functionName: LoadLevelSelect
-    data: LevelSelect
+    data: LevelSelect-&-Shop
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

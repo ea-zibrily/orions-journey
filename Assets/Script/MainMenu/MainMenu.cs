@@ -58,10 +58,13 @@ public class MainMenu : MonoBehaviour
     }
 
 
-    public void Shop(string sceneName)
+    public void Shop()
     {
-        SceneManager.LoadScene(sceneName);
+        anim.SetTrigger("OpenShop");
+    }
 
+    public void Back(){
+        anim.SetTrigger("CloseShop");
     }
 
     public void LoadLevelSelect(string sceneName)

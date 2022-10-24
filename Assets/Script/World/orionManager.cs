@@ -69,7 +69,7 @@ public class orionManager : MonoBehaviour
         PlayerPrefs.SetInt("totalCoin", coin);
     }
 
-    void orionHealth()
+    public void orionHealth()
     {
         healthIndex--;
         if(healthIndex < 1)
