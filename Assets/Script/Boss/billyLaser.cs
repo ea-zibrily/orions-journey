@@ -56,7 +56,7 @@ public class billyLaser : MonoBehaviour
             if(hit){
                 
                 //Take Damage
-                // OrionScript.orionHealth();
+                OrionScript.orionHealth();
 
                 Draw2DRay(laserFirePoint.position, hit.point);
             } else {

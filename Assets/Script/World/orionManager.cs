@@ -23,6 +23,7 @@ public class orionManager : MonoBehaviour
     [Header("Health")]
     [SerializeField] public GameObject[] health;
     [SerializeField] public int healthIndex;
+    [SerializeField] public GameObject deathVfx;
 
     void Awake()
     {
@@ -75,8 +76,16 @@ public class orionManager : MonoBehaviour
         if(healthIndex < 1)
         {
             healthIndex = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            Destroy(gameObject);
         }
         health[healthIndex].SetActive(false);
+    }
+
+    void OnDestroy(){
+        Instantiate(deathVfx, transform.position, Quaternion.identity);
+    }
+
+    public void RestartScene(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
