@@ -24,6 +24,12 @@ public class gameOver : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         gameOverWinUI.SetActive(false);
-        orionManager.LastCheckPointPos = new Vector2(0, -10.8f);
+        orionManager.LastCheckPointPos = new Vector2(0, 0);
+    }
+
+    public void LevelSelect(string sceneName){
+        Time.timeScale = 1;
+        orionManager.LastCheckPointPos = new Vector2(0, 0);
+        SceneManager.LoadScene(sceneName);
     }
 }

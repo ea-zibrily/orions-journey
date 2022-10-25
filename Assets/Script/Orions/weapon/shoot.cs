@@ -16,9 +16,16 @@ public class shoot : MonoBehaviour
     public float fireForce;
     public int damage;
 
+    //lava ref
+    private GameObject lavaObj;
+    private lava lavaScript;
+
     void Start(){
-        playerObj = GameObject.Find("Player");
+        playerObj = GameObject.FindGameObjectWithTag("Player");
         player = playerObj.GetComponent<playerController>();
+
+        lavaObj = GameObject.FindGameObjectWithTag("lava");
+        lavaScript = lavaObj.GetComponent<lava>();
     }
 
     void Update(){
@@ -39,6 +46,7 @@ public class shoot : MonoBehaviour
             transform.localScale = aimLocalScale;
 
             if(Input.GetMouseButtonDown(0)){
+                lavaScript.enabled = true;
                 Shoot();
                 player.Launch(playerImpact);
             }

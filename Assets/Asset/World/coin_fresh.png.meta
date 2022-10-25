@@ -117,7 +117,7 @@ TextureImporter:
         width: 647
         height: 648
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,12 +133,12 @@ TextureImporter:
       name: coin_fresh_1
       rect:
         serializedVersion: 2
-        x: 1197
-        y: 195
-        width: 568
+        x: 1154
+        y: 204
+        width: 647
         height: 648
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,12 +154,12 @@ TextureImporter:
       name: coin_fresh_2
       rect:
         serializedVersion: 2
-        x: 2257
+        x: 2160
         y: 195
-        width: 446
+        width: 647
         height: 648
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: coin_fresh_3
       rect:
         serializedVersion: 2
-        x: 3385
+        x: 3164
         y: 195
-        width: 188
+        width: 647
         height: 648
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,12 +196,12 @@ TextureImporter:
       name: coin_fresh_4
       rect:
         serializedVersion: 2
-        x: 4255
+        x: 4152
         y: 195
-        width: 449
+        width: 647
         height: 648
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -217,12 +217,12 @@ TextureImporter:
       name: coin_fresh_5
       rect:
         serializedVersion: 2
-        x: 5208
+        x: 5150
         y: 195
-        width: 565
+        width: 647
         height: 648
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

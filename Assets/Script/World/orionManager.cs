@@ -32,8 +32,10 @@ public class orionManager : MonoBehaviour
     public float flashDuration;
     public int numberofFlash;
 
+    SpriteRenderer mySprite;
+
     [Header("Reference")]
-    public SpriteRenderer mySprite;
+    public lava lava;
 
     void Awake()
     {
@@ -43,7 +45,7 @@ public class orionManager : MonoBehaviour
         Instantiate(weaponPrefabs[weaponIndex], transform);
 
         coin = PlayerPrefs.GetInt("totalCoin", 0);
-        // GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
+        GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
         Debug.Log(check);
     }
 
@@ -62,26 +64,39 @@ public class orionManager : MonoBehaviour
 
         if(collision.CompareTag("enemy"))
         {
-            orionHealth();
+            // orionHealth();
             StartCoroutine(iframesCo());
         }
 
         if (collision.CompareTag("Boss"))
         {
-            orionHealth();
+            // orionHealth();
             StartCoroutine(iframesCo());
         }
 
         if (collision.CompareTag("Boss2"))
         {
-            orionHealth();
+            // orionHealth();
             StartCoroutine(iframesCo());
         }
 
         if (collision.CompareTag("Boss3"))
         {
-            orionHealth();
+            // orionHealth();
             StartCoroutine(iframesCo());
+        }
+        
+        if (collision.CompareTag("lava"))
+        {
+            lava.enabled = false;            
+
+            for (int i = healthIndex; i > 0; i--)
+            {
+                healthIndex--;
+                health[healthIndex].SetActive(false);
+            }
+            Instantiate(deathVfx, transform.position, Quaternion.identity);
+            Destroy(gameObject);
         }
     }
 
@@ -91,20 +106,16 @@ public class orionManager : MonoBehaviour
         PlayerPrefs.SetInt("totalCoin", coin);
     }
 
-    private void orionHealth()
-    {
-        healthIndex--;
-        if(healthIndex < 1)
-        {
-            healthIndex = 0;
-            Destroy(gameObject);
-        }
-        health[healthIndex].SetActive(false);
-    }
-
-    void OnDestroy(){
-        Instantiate(deathVfx, transform.position, Quaternion.identity);
-    }
+    // private void orionHealth()
+    // {
+    //     healthIndex--;
+    //     if(healthIndex < 1)
+    //     {
+    //         healthIndex = 0;
+    //         Destroy(gameObject);
+    //     }
+    //     health[healthIndex].SetActive(false);
+    // }
 
     public void RestartScene(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -113,8 +124,13 @@ public class orionManager : MonoBehaviour
     IEnumerator iframesCo()
     {
         int temp = 0;
-        Physics2D.IgnoreLayerCollision(7, 8, true);
+
+        healthIndex--;
+        health[healthIndex].SetActive(false);
+
         //myCol.enabled = false;
+        Physics2D.IgnoreLayerCollision(7, 8, true);
+        
         while (temp < numberofFlash)
         {
             mySprite.color = flashColor;
@@ -125,6 +141,14 @@ public class orionManager : MonoBehaviour
         }
         //myCol.enabled = true;
         Physics2D.IgnoreLayerCollision(7, 8, false);
+        
+        if(healthIndex < 1)
+        {
+            Instantiate(deathVfx, transform.position, Quaternion.identity);
+            healthIndex = 0;
+            Destroy(gameObject);
+        }
+        
     }
 
 }
