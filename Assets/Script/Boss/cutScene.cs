@@ -23,6 +23,7 @@ public class cutScene : MonoBehaviour
     private billy billy;
     public GameObject billyStartLaserPoint;
     private LaserStartAnim laserStart;
+    private BoxCollider2D boxCollider;
 
     private PlayableDirector _cutScene;
 
@@ -35,6 +36,8 @@ public class cutScene : MonoBehaviour
         checkpointPlatform = platform.GetComponent<platformCheckpoint>();
         checkpointPlatform.enabled = false;
 
+        boxCollider = billyBoss.GetComponent<BoxCollider2D>();
+        boxCollider.enabled = false;
         billyLaser = billyBoss.GetComponent<billyLaser>();
         billyLaser.enabled = false;
         billy = billyBoss.GetComponent<billy>();
@@ -64,6 +67,7 @@ public class cutScene : MonoBehaviour
         spawner.SetActive(true);
         billyLaser.enabled = true;
         billy.enabled = true;
+        boxCollider.enabled = true;
         laserStart.enabled = true;
         billyHP.SetActive(true);
     }

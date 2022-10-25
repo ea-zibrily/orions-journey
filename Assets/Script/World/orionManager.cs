@@ -33,7 +33,7 @@ public class orionManager : MonoBehaviour
     public int numberofFlash;
 
     [Header("Reference")]
-    SpriteRenderer mySprite;
+    public SpriteRenderer mySprite;
 
     void Awake()
     {
@@ -91,7 +91,7 @@ public class orionManager : MonoBehaviour
         PlayerPrefs.SetInt("totalCoin", coin);
     }
 
-    public void orionHealth()
+    private void orionHealth()
     {
         healthIndex--;
         if(healthIndex < 1)
