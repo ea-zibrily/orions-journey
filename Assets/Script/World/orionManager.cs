@@ -32,10 +32,9 @@ public class orionManager : MonoBehaviour
     public float flashDuration;
     public int numberofFlash;
 
-    SpriteRenderer mySprite;
-
     [Header("Reference")]
     public lava lava;
+    SpriteRenderer mySprite;
 
     void Awake()
     {
@@ -106,7 +105,7 @@ public class orionManager : MonoBehaviour
         PlayerPrefs.SetInt("totalCoin", coin);
     }
 
-    // private void orionHealth()
+    // void orionHealth()
     // {
     //     healthIndex--;
     //     if(healthIndex < 1)
@@ -117,17 +116,17 @@ public class orionManager : MonoBehaviour
     //     health[healthIndex].SetActive(false);
     // }
 
-    public void RestartScene(){
+    public void RestartScene()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     IEnumerator iframesCo()
     {
-        int temp = 0;
-
         healthIndex--;
         health[healthIndex].SetActive(false);
 
+        int temp = 0;
         //myCol.enabled = false;
         Physics2D.IgnoreLayerCollision(7, 8, true);
         
@@ -144,8 +143,8 @@ public class orionManager : MonoBehaviour
         
         if(healthIndex < 1)
         {
-            Instantiate(deathVfx, transform.position, Quaternion.identity);
             healthIndex = 0;
+            Instantiate(deathVfx, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         

@@ -17,23 +17,6 @@ public class cinemaShake : MonoBehaviour
         cinemaVirCam = GetComponent<CinemachineVirtualCamera>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (shakeTimer > 0)
-        {
-            shakeTimer -= Time.deltaTime;
-            if (shakeTimer <= 0f)
-            {
-                CinemachineBasicMultiChannelPerlin cinemaBasMult =
-                    cinemaVirCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-                cinemaBasMult.m_AmplitudeGain =
-                    Mathf.Lerp(startingIntensity, 0f, shakeTimer / shakeTimerTotal);
-            }
-        }
-    }
-
     public void shakeCamera(float intensity, float time)
     {
         CinemachineBasicMultiChannelPerlin cinemaBasMult =
@@ -45,4 +28,20 @@ public class cinemaShake : MonoBehaviour
         shakeTimerTotal = time;
         shakeTimer = time;
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (shakeTimer > 0)
+        {
+            shakeTimer -= Time.deltaTime;
+            CinemachineBasicMultiChannelPerlin cinemaBasMult =
+                cinemaVirCam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+            cinemaBasMult.m_AmplitudeGain =
+                Mathf.Lerp(startingIntensity, 0f, shakeTimer / shakeTimerTotal);
+        }
+    }
+
+    
 }

@@ -31,7 +31,7 @@ public class lava : MonoBehaviour
     }
 
     public void CutScene(){
-        transform.position = new Vector2(transform.position.x, endPosition.position.y - 3f);
+        transform.position = new Vector2(transform.position.x, endPosition.position.y - 1f);
     }
 
 }
