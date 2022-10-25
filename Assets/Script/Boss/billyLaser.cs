@@ -8,11 +8,12 @@ public class billyLaser : MonoBehaviour
     public Transform laserFirePoint;
     public Transform laserFirePointEnd;
     private LineRenderer lr;
+    private BoxCollider2D boxCollider;
     private bool isShooting;
 
     public LayerMask layer;
     public float lineLength;
-    
+
     public Texture[] textures;
     private int animationStep;
     public float fps;
@@ -20,19 +21,24 @@ public class billyLaser : MonoBehaviour
 
     [Header("Orion")]
     public orionManager OrionScript;
-    
-    void Start(){
+
+    void Start()
+    {
         isShooting = false;
         lr = GetComponent<LineRenderer>();
+        boxCollider = GetComponent<BoxCollider2D>();
     }
 
-    void Update(){
+    void Update()
+    {
         StartCoroutine(Shoot());
-        
+
         fpsCounter += Time.deltaTime;
-        if(fpsCounter >= 1f / fps){
+        if (fpsCounter >= 1f / fps)
+        {
             animationStep++;
-            if(animationStep == textures.Length){
+            if (animationStep == textures.Length)
+            {
                 animationStep = 0;
             }
 
@@ -42,33 +48,29 @@ public class billyLaser : MonoBehaviour
         }
     }
 
-    void Draw2DRay(Vector2 startPos, Vector2 endPos){
+    void Draw2DRay(Vector2 startPos, Vector2 endPos)
+    {
         lr.SetPosition(0, startPos);
         lr.SetPosition(1, endPos);
-    }    
+    }
 
-    IEnumerator Shoot(){
-        if(isShooting == true){
+    IEnumerator Shoot()
+    {
+        if (isShooting == true)
+        {
             lr.enabled = true;
-
-            RaycastHit2D hit = Physics2D.Raycast(laserFirePoint.position, laserFirePoint.right, lineLength, layer);
-            
-            if(hit){
-                
-                //Take Damage
-                OrionScript.orionHealth();
-
-                Draw2DRay(laserFirePoint.position, hit.point);
-            } else {
-                Draw2DRay(laserFirePoint.position, laserFirePointEnd.position);
-            }
-
+            boxCollider.enabled = true;
+            Draw2DRay(laserFirePoint.position, laserFirePointEnd.position);
             yield return new WaitForSeconds(2);
             isShooting = false;
-        } else {
+        }
+        else
+        {
             lr.enabled = false;
+            boxCollider.enabled = false;
             yield return new WaitForSeconds(2);
             isShooting = true;
         }
     }
+
 }
