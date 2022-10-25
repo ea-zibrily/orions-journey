@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class orionManager : MonoBehaviour
 {
@@ -24,8 +25,20 @@ public class orionManager : MonoBehaviour
     [SerializeField] public GameObject[] health;
     [SerializeField] public int healthIndex;
 
+    [Header("Iframes")]
+    public Color flashColor;
+    public Color regColor;
+    public float flashDuration;
+    public int numberofFlash;
+
+
+    [Header("Reference")]
+    SpriteRenderer mySprite;
+
     void Awake()
     {
+        mySprite = GetComponent<SpriteRenderer>();
+
         weaponIndex = PlayerPrefs.GetInt("SelectedWeapon", 0);
         Instantiate(weaponPrefabs[weaponIndex], transform);
 
@@ -50,16 +63,19 @@ public class orionManager : MonoBehaviour
         if(collision.CompareTag("enemy"))
         {
             orionHealth();
+            StartCoroutine(iframesCo());
         }
 
         if (collision.CompareTag("Boss"))
         {
             orionHealth();
+            StartCoroutine(iframesCo());
         }
 
         if (collision.CompareTag("Boss3"))
         {
             orionHealth();
+            StartCoroutine(iframesCo());
         }
     }
 
@@ -78,5 +94,22 @@ public class orionManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         health[healthIndex].SetActive(false);
+    }
+
+    IEnumerator iframesCo()
+    {
+        int temp = 0;
+        Physics2D.IgnoreLayerCollision(7, 8, true);
+        //myCol.enabled = false;
+        while(temp < numberofFlash)
+        {
+            mySprite.color = flashColor;
+            yield return new WaitForSeconds(flashDuration);
+            mySprite.color = regColor;
+            yield return new WaitForSeconds(flashDuration);
+            temp++;
+        }
+        //myCol.enabled = true;
+        Physics2D.IgnoreLayerCollision(7, 8, false);
     }
 }

@@ -48,5 +48,6 @@ public class shoot : MonoBehaviour
     public void Shoot(){
         GameObject projectile = Instantiate(bullet, firePos.position, firePos.rotation);
         projectile.GetComponent<Rigidbody2D>().AddForce(firePos.right * fireForce, ForceMode2D.Impulse);
+        cinemaShake.Instance.shakeCamera(2.5f, 0.1f);
     }
 }
