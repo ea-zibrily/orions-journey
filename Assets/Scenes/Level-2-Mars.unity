@@ -3177,7 +3177,7 @@ GameObject:
   - component: {fileID: 678199771}
   - component: {fileID: 678199770}
   - component: {fileID: 678199772}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boss2
   m_TagString: Boss2
   m_Icon: {fileID: 0}
@@ -3471,6 +3471,7 @@ GameObject:
   - component: {fileID: 774520963}
   - component: {fileID: 774520965}
   - component: {fileID: 774520964}
+  - component: {fileID: 774520966}
   m_Layer: 0
   m_Name: cm
   m_TagString: Untagged
@@ -3547,6 +3548,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &774520966
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774520962}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb026fafb42b14791938953eaace77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_NoiseProfile: {fileID: 11400000, guid: 69ce8388f6785dd4c8c39915efece2f4, type: 2}
+  m_PivotOffset: {x: 0, y: 0, z: 0}
+  m_AmplitudeGain: 0
+  m_FrequencyGain: 0
+  mNoiseOffsets: {x: 0, y: 0, z: 0}
 --- !u!1 &787613319
 GameObject:
   m_ObjectHideFlags: 0
@@ -3941,6 +3959,7 @@ GameObject:
   - component: {fileID: 909388649}
   - component: {fileID: 909388648}
   - component: {fileID: 909388647}
+  - component: {fileID: 909388650}
   m_Layer: 0
   m_Name: CM vcam1
   m_TagString: Untagged
@@ -4016,6 +4035,18 @@ Transform:
   m_Father: {fileID: 202224111}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &909388650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 909388646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1e72e0420d6874d8080cf7d565a5d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &953795285
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,7 +5022,7 @@ GameObject:
   - component: {fileID: 1386960603}
   - component: {fileID: 1386960602}
   - component: {fileID: 1386960601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -5083,7 +5114,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386960600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.84, y: 18.25, z: 0}
+  m_LocalPosition: {x: 3.85, y: -2.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -6501,6 +6532,10 @@ MonoBehaviour:
   - {fileID: 1264739487}
   healthIndex: 3
   deathVfx: {fileID: 5219047318126256541, guid: c8506da9c03de1448a7946fea8427d12, type: 3}
+  flashColor: {r: 1, g: 0, b: 0, a: 0.6784314}
+  regColor: {r: 1, g: 1, b: 1, a: 0.6784314}
+  flashDuration: 0.07
+  numberofFlash: 4
 --- !u!114 &1834714035
 MonoBehaviour:
   m_ObjectHideFlags: 0
