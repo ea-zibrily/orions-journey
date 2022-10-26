@@ -109,9 +109,9 @@ TextureImporter:
       name: Enemy 1 Fly 2000 x 2000_0
       rect:
         serializedVersion: 2
-        x: 593
+        x: 277
         y: 461
-        width: 752
+        width: 1338
         height: 1078
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -130,10 +130,10 @@ TextureImporter:
       name: Enemy 1 Fly 2000 x 2000_1
       rect:
         serializedVersion: 2
-        x: 2615
-        y: 466
-        width: 752
-        height: 1039
+        x: 2280
+        y: 426
+        width: 1338
+        height: 1078
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,10 +151,10 @@ TextureImporter:
       name: Enemy 1 Fly 2000 x 2000_2
       rect:
         serializedVersion: 2
-        x: 4456
-        y: 510
-        width: 1078
-        height: 975
+        x: 4263
+        y: 407
+        width: 1338
+        height: 1078
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -172,10 +172,10 @@ TextureImporter:
       name: Enemy 1 Fly 2000 x 2000_3
       rect:
         serializedVersion: 2
-        x: 6313
-        y: 529
-        width: 1238
-        height: 932
+        x: 6251
+        y: 378
+        width: 1338
+        height: 1078
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -194,9 +194,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8220
-        y: 554
+        y: 346
         width: 1338
-        height: 873
+        height: 1078
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
