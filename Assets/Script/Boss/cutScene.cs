@@ -69,6 +69,7 @@ public class cutScene : MonoBehaviour
         bulletScript.enabled = true;
         checkpointPlatform.enabled = true;
         spawner.SetActive(true);
+        boxCollider.enabled = true;
         billyLaser.enabled = true;
         billy.enabled = true;
         laserStart.enabled = true;
