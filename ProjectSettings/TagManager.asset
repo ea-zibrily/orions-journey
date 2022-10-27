@@ -18,6 +18,7 @@ TagManager:
   - Boss2
   - Boss3
   - Aim
+  - PlanetInfo
   layers:
   - Default
   - TransparentFX

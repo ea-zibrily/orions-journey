@@ -9,6 +9,8 @@ public class MainMenu : MonoBehaviour
     private Animator anim;
     private bool isBack;
     private bool isStart;
+    private bool isInfoDisplay;
+    public GameObject planetInfo;
 
     void Start()
     {
@@ -18,6 +20,15 @@ public class MainMenu : MonoBehaviour
 
     void Update()
     {
+        if (planetInfo.activeSelf)
+        {
+            isInfoDisplay = true;
+        }
+        else
+        {
+            isInfoDisplay = false;
+        }
+
         if (Input.anyKeyDown && !isBack)
         {
             if (Input.GetKeyDown(KeyCode.Escape))
@@ -32,7 +43,7 @@ public class MainMenu : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && isBack)
+        if (Input.GetKeyDown(KeyCode.Escape) && isBack && !isInfoDisplay)
         {
             anim.SetTrigger("Back");
             isBack = false;
@@ -62,7 +73,8 @@ public class MainMenu : MonoBehaviour
         anim.SetTrigger("OpenShop");
     }
 
-    public void Back(){
+    public void Back()
+    {
         anim.SetTrigger("CloseShop");
     }
 
