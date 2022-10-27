@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4197706537167222740}
   - component: {fileID: 4197706537167222745}
   - component: {fileID: 4197706537167222742}
-  - component: {fileID: 4197706537167222744}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: checkpoint
@@ -29,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4197706537167222741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 7.12, z: 0}
-  m_LocalScale: {x: 4.6331, y: 4.6331, z: 4.6331}
+  m_LocalScale: {x: 0.073, y: 0.073, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6494656711642010645, guid: c5788c1162f58ff49bbea1bf4efb9696, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e66d482d664a34143ae11606e07872be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.5}
+    oldSize: {x: 30.000002, y: 30.000002}
     newSize: {x: 0.32, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -124,22 +123,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isCheck: 0
---- !u!95 &4197706537167222744
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4197706537167222741}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: bafdc07ee3e9b2646bd07e8b91446784, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
