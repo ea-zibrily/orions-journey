@@ -18,6 +18,7 @@ public class gressor : MonoBehaviour
     public GameObject deathParticle;
     GameObject bossMgrObj;
     boss3Manager bossMgr;
+    shoot shootDmg;
 
     private void Awake()
     {
@@ -35,6 +36,8 @@ public class gressor : MonoBehaviour
 
         bossMgrObj = GameObject.Find("Boss3");
         bossMgr = bossMgrObj.GetComponent<boss3Manager>();
+
+        shootDmg = GameObject.FindGameObjectWithTag("aim").GetComponent<shoot>();
     }
 
     // Update is called once per frame
@@ -72,7 +75,7 @@ public class gressor : MonoBehaviour
     {
         if(collision.CompareTag("Bullet"))
         {
-            bossMgr.hp -= bossMgr.shootDmg.damage;
+            bossMgr.hp -= shootDmg.damage;
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

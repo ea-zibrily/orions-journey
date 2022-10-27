@@ -24,6 +24,7 @@ public class skretchry : MonoBehaviour
     public GameObject deathParticle;
     GameObject bossMgrObj;
     boss3Manager bossMgr;
+    shoot shootDmg;
     SpriteRenderer mySp;
 
     void Awake()
@@ -42,6 +43,9 @@ public class skretchry : MonoBehaviour
         //manager
         bossMgrObj = GameObject.Find("Boss3");
         bossMgr = bossMgrObj.GetComponent<boss3Manager>();
+
+        //shoot/aim dmg
+        shootDmg = GameObject.FindGameObjectWithTag("aim").GetComponent<shoot>();
 
         //<summary>
         //pake random point biar arah gerak boss random
@@ -165,7 +169,7 @@ public class skretchry : MonoBehaviour
     {
         if (collision.CompareTag("Bullet"))
         {
-            bossMgr.hp -= bossMgr.shootDmg.damage;
+            bossMgr.hp -= shootDmg.damage;
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

@@ -20,6 +20,7 @@ public class pursues : MonoBehaviour
     public GameObject deathParticle;
     GameObject bossMgrObj;
     boss3Manager bossMgr;
+    shoot shootDmg;
 
     private void Awake()
     {
@@ -34,6 +35,9 @@ public class pursues : MonoBehaviour
         //manager
         bossMgrObj = GameObject.Find("Boss3");
         bossMgr = bossMgrObj.GetComponent<boss3Manager>();
+
+        //shoot/aim dmg
+        shootDmg = GameObject.FindGameObjectWithTag("aim").GetComponent<shoot>();
     }
 
     // Update is called once per frame
@@ -100,7 +104,7 @@ public class pursues : MonoBehaviour
                 Destroy(gameObject);
                 break;
             case "Bullet":
-                bossMgr.hp -= bossMgr.shootDmg.damage;
+                bossMgr.hp -= shootDmg.damage;
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 break;
