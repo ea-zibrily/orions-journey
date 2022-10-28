@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("MainMenuTheme");
+        FindObjectOfType<AudioManager>().Stop("InGameTheme");
         Time.timeScale = 1;
         isBack = false;
         anim = GetComponent<Animator>();
@@ -45,6 +47,7 @@ public class MainMenu : MonoBehaviour
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("GameStart");
                 faderObj.SetActive(false);
                 anim.SetTrigger("StartGame");
                 isBack = true;
