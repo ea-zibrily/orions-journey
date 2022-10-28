@@ -37,7 +37,7 @@ public class gameManager : MonoBehaviour
             Invoke("GameOver", 1f);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && !isPause && !isGameOver)
+        if(Input.GetKeyDown(KeyCode.Escape) && !isPause && !isGameOver)
         {
             Time.timeScale = 0;
             faderObj.SetActive(false);
@@ -45,7 +45,7 @@ public class gameManager : MonoBehaviour
             pausePanel.SetActive(true);
             Debug.Log("Game Pause!");
         }
-        else if (Input.GetKeyDown(KeyCode.Space) && isPause && !isGameOver)
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPause && !isGameOver)
         {
             Time.timeScale = 1;
             faderObj.SetActive(true);
