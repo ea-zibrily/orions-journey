@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class goatrigger : MonoBehaviour
 {
-    public goa goaDoor;
+    Animator myAnim;
+    private void Awake()
+    {
+        myAnim = GetComponentInParent<Animator>();
+    }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            goaDoor.closeGoa();
+            myAnim.SetTrigger("close");
         }
     }
 }

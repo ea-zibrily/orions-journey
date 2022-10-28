@@ -22,7 +22,6 @@ public class bossManager : MonoBehaviour
     //Ref
     private shoot shootDamage;
     private GameObject Aim;
-    public goa goaOpen;
     public GameObject deathParticle;
 
     private void Awake()
@@ -64,7 +63,6 @@ public class bossManager : MonoBehaviour
                 hpbarPanel.SetActive(false);
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);
-                goaOpen.openGoa();
             }
         }
     }

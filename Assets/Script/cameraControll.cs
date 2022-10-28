@@ -5,7 +5,8 @@ using UnityEngine.Playables;
 
 public class cameraControll : MonoBehaviour
 {
-    public Animator myAnim;
+    public Animator camAnim;
+    public Animator goaAnim;
     public PlayableDirector director;
     public GameObject hpPanel;
 
@@ -18,23 +19,27 @@ public class cameraControll : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            myAnim.SetTrigger("bossCam");
+            camAnim.SetTrigger("bossCam");
             director.enabled = true;
+            goaAnim.SetTrigger("close");
             Invoke("arenaCam", 3f);
         }
     }
+
+    /*
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            myAnim.SetTrigger("playerCam");
+            camAnim.SetTrigger("playerCam");
         }
     }
+    */
 
 
     void arenaCam()
     {
-        myAnim.SetTrigger("bossArenaCam");
+        camAnim.SetTrigger("bossArenaCam");
         hpPanel.SetActive(true);
     }
 }

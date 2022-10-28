@@ -20,6 +20,7 @@ public class orionManager : MonoBehaviour
     [SerializeField] public string check = "sudah cekpoing lur";
     // [SerializeField] public static Vector2 LastCheckPointPos = new Vector2(0, -2.507308f);
     [SerializeField] public static Vector2 LastCheckPointPos;
+    public static Vector2 testBos = new Vector2(2.64f, 206.7f);
 
     [Header("Health")]
     [SerializeField] public GameObject[] health;
@@ -45,6 +46,7 @@ public class orionManager : MonoBehaviour
 
         coin = PlayerPrefs.GetInt("totalCoin", 0);
         GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
+        GameObject.FindGameObjectWithTag("Player").transform.position = testBos;
         Debug.Log(check);
     }
 
