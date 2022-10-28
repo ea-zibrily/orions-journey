@@ -21,6 +21,8 @@ public class MainMenu : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<AudioManager>().Play("MainMenuTheme");
+        FindObjectOfType<AudioManager>().Stop("InGameTheme");
         Time.timeScale = 1;
         isBack = false;
         anim = GetComponent<Animator>();

@@ -29,16 +29,25 @@ public class gameManager : MonoBehaviour
         pausePanel.SetActive(false);
         gameOverWinUI.SetActive(false);
     }
+
+    void Start()
+    {
+        FindObjectOfType<AudioManager>().Play("InGameTheme");
+        FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
+    }
     // Update is called once per frame
     void Update()
     {
-        if(boss == null){
+        if (boss == null)
+        {
             isGameOver = true;
+            FindObjectOfType<AudioManager>().Stop("InGameTheme");
             Invoke("GameOver", 1f);
         }
 
-        if(Input.GetKeyDown(KeyCode.Space) && !isPause && !isGameOver)
+        if (Input.GetKeyDown(KeyCode.Space) && !isPause && !isGameOver)
         {
+            FindObjectOfType<AudioManager>().Pause("InGameTheme");
             Time.timeScale = 0;
             faderObj.SetActive(false);
             isPause = true;
@@ -47,6 +56,7 @@ public class gameManager : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Space) && isPause && !isGameOver)
         {
+            FindObjectOfType<AudioManager>().Play("InGameTheme");
             Time.timeScale = 1;
             faderObj.SetActive(true);
             isPause = false;
@@ -61,6 +71,7 @@ public class gameManager : MonoBehaviour
 
     public void resume()
     {
+        FindObjectOfType<AudioManager>().Play("InGameTheme");
         Time.timeScale = 1;
         faderObj.SetActive(true);
         isPause = false;
@@ -94,7 +105,8 @@ public class gameManager : MonoBehaviour
     //method/func buat game over panel
     //</summary>
 
-    void GameOver(){
+    void GameOver()
+    {
         Time.timeScale = 0;
         gameOverWinUI.SetActive(true);
     }
