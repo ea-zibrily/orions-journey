@@ -10,6 +10,7 @@ public class billyLaser : MonoBehaviour
     private LineRenderer lr;
     private BoxCollider2D boxCollider;
     private bool isShooting;
+    private Animator anim;
 
     public LayerMask layer;
     public float lineLength;
@@ -24,6 +25,7 @@ public class billyLaser : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
         isShooting = false;
         lr = GetComponent<LineRenderer>();
         boxCollider = GetComponent<BoxCollider2D>();
@@ -58,6 +60,7 @@ public class billyLaser : MonoBehaviour
     {
         if (isShooting == true)
         {
+            anim.SetBool("isShooting", true);
             lr.enabled = true;
             boxCollider.enabled = true;
             Draw2DRay(laserFirePoint.position, laserFirePointEnd.position);
@@ -66,6 +69,7 @@ public class billyLaser : MonoBehaviour
         }
         else
         {
+            anim.SetBool("isShooting", false);
             lr.enabled = false;
             boxCollider.enabled = false;
             yield return new WaitForSeconds(2);
