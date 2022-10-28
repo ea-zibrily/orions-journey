@@ -12,8 +12,19 @@ public class MainMenu : MonoBehaviour
     private bool isInfoDisplay;
     public GameObject planetInfo;
 
+    [Header("Scene List")]
+    public string earthScene;
+    public string marsScene;
+    public string jupiterScene;
+
+    [Header("Fader")]
+    public GameObject fader;
+    public FaderScene faderScene;
+
     void Start()
     {
+        Time.timeScale = 1;
+        fader.SetActive(false);
         isBack = false;
         anim = GetComponent<Animator>();
     }
@@ -50,20 +61,23 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void Earth(string sceneName)
+    public void Earth()
     {
-        SceneManager.LoadScene(sceneName);
+        fader.SetActive(true);
+        faderScene.FadeSceneOut(earthScene);
     }
 
-    public void Mars(string sceneName)
+    public void Mars()
     {
-        SceneManager.LoadScene(sceneName);
+        fader.SetActive(true);
+        faderScene.FadeSceneOut(marsScene);
 
     }
 
-    public void Jupiter(string sceneName)
+    public void Jupiter()
     {
-        SceneManager.LoadScene(sceneName);
+        fader.SetActive(true);
+        faderScene.FadeSceneOut(jupiterScene);
 
     }
 
@@ -76,10 +90,5 @@ public class MainMenu : MonoBehaviour
     public void Back()
     {
         anim.SetTrigger("CloseShop");
-    }
-
-    public void LoadLevelSelect(string sceneName)
-    {
-        SceneManager.LoadScene(sceneName);
     }
 }
