@@ -45,7 +45,7 @@ public class gameManager : MonoBehaviour
             Invoke("GameOver", 1f);
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && !isPause && !isGameOver)
+        if(Input.GetKeyDown(KeyCode.Space) && !isPause && !isGameOver)
         {
             FindObjectOfType<AudioManager>().Pause("InGameTheme");
             Time.timeScale = 0;
@@ -54,7 +54,7 @@ public class gameManager : MonoBehaviour
             pausePanel.SetActive(true);
             Debug.Log("Game Pause!");
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPause && !isGameOver)
+        else if (Input.GetKeyDown(KeyCode.Space) && isPause && !isGameOver)
         {
             FindObjectOfType<AudioManager>().Play("InGameTheme");
             Time.timeScale = 1;
