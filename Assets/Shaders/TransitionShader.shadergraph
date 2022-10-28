@@ -1039,7 +1039,7 @@
     },
     "m_Name": "EdgeSmoothing",
     "m_DefaultReferenceName": "Vector1_7cc3e9ffcf674423a27536833a73a1cc",
-    "m_OverrideReferenceName": "_Smoothing",
+    "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

@@ -33,17 +33,11 @@ public class orionManager : MonoBehaviour
     public int numberofFlash;
 
     [Header("Reference")]
-    public string thisLevelName;
-    public FaderScene faderScene;
-    public static float timeUntilRestart = 1f;
     public lava lava;
     SpriteRenderer mySprite;
 
-
     void Awake()
     {
-        Time.timeScale = 1;
-
         mySprite = GetComponent<SpriteRenderer>();
 
         weaponIndex = PlayerPrefs.GetInt("SelectedWeapon", 0);
@@ -101,8 +95,7 @@ public class orionManager : MonoBehaviour
                 health[healthIndex].SetActive(false);
             }
             Instantiate(deathVfx, transform.position, Quaternion.identity);
-            faderScene.FadeSceneOut(thisLevelName);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
@@ -152,8 +145,7 @@ public class orionManager : MonoBehaviour
         {
             healthIndex = 0;
             Instantiate(deathVfx, transform.position, Quaternion.identity);
-            faderScene.FadeSceneOut(thisLevelName);
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         
     }
