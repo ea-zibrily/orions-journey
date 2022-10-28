@@ -23,6 +23,7 @@ public class billy : MonoBehaviour
     private LineRenderer laser;
     private float destroyBilly = 2f;
     public GameObject deathVfx;
+    public GameObject deathVfx2;
     public GameObject spawnerPlatform;
     private CapsuleCollider2D capsuleCollider;
 
@@ -141,6 +142,7 @@ public class billy : MonoBehaviour
         {
             Destroy(spawnerPlatform);
             Instantiate(deathVfx, transform.position, Quaternion.identity);
+            Instantiate(deathVfx2, transform.position, Quaternion.identity);
             hpbarPanel.SetActive(false);
             // billyHP.SetActive(false);
             Destroy(gameObject);

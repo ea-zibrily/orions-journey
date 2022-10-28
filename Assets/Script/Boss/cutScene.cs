@@ -22,8 +22,6 @@ public class cutScene : MonoBehaviour
     public GameObject bossLaser;
     private billyLaser billyLaser;
     private billy billy;
-    public GameObject billyStartLaserPoint;
-    private LaserStartAnim laserStart;
     private BoxCollider2D boxCollider;
 
     [Header("Lava")]
@@ -45,8 +43,6 @@ public class cutScene : MonoBehaviour
         billy = billyBoss.GetComponent<billy>();
         billy.enabled = false;
         billyHP.SetActive(false);
-        laserStart = billyStartLaserPoint.GetComponent<LaserStartAnim>();
-        laserStart.enabled = false;
 
         _cutScene = gameObject.GetComponent<PlayableDirector>();
         _cutScene.enabled = false;
@@ -72,7 +68,6 @@ public class cutScene : MonoBehaviour
         boxCollider.enabled = true;
         billyLaser.enabled = true;
         billy.enabled = true;
-        laserStart.enabled = true;
         billyHP.SetActive(true);
     }
 }
