@@ -19,8 +19,8 @@ public class boss3Manager : MonoBehaviour
     public bool isDeath;
     public GameObject deathParticle;
     public GameObject hpPanel;
+    public shoot shootDmg;
     private GameObject Aim;
-    private shoot shootDmg;
     public GameObject[] spawner;
 
     // Start is called before the first frame update
