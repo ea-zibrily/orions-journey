@@ -62,7 +62,7 @@ public class orionManager : MonoBehaviour
     {
         if(collision.CompareTag("coin"))
         {
-            FindObjectOfType<AudioManager>().Play("Coin");
+            //FindObjectOfType<AudioManager>().Play("Coin");
             getCoin();
             Destroy(collision.gameObject);
         }
