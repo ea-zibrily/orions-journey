@@ -22,7 +22,7 @@ public class bullet : MonoBehaviour
             case "Platform" :
                 Destroy(gameObject);
                 break;
-            case "Boss" :
+            case "Boss2" :
                 // billy.TakingDamage();
                 //boss2...
                 //boss3...

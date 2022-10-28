@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level-1-Earth.unity
     guid: c0138aaf6a3d38c428bd19396f9ec810
+  - enabled: 1
+    path: Assets/Scenes/Level-2-Mars.unity
+    guid: e8c493b365c8e6c4a8d83136b39b84e9
   m_configObjects: {}

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1474016394425674351}
   - component: {fileID: 1474016394425674350}
-  - component: {fileID: -6478579845864840842}
+  - component: {fileID: 490987026997875035}
   m_Layer: 0
   m_Name: Aim 2
   m_TagString: Aim
@@ -51,7 +51,7 @@ MonoBehaviour:
   firePos: {fileID: 1474016394657978407}
   fireForce: 20
   damage: 40
---- !u!82 &-6478579845864840842
+--- !u!82 &490987026997875035
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,7 +172,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1474016394657978404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.357, y: 0.111, z: 0}
+  m_LocalPosition: {x: 1.399, y: 0.111, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1474016394425674351}

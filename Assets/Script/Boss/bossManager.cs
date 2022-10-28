@@ -60,6 +60,7 @@ public class bossManager : MonoBehaviour
             if (hp < 1)
             {
                 bossDeath = true;
+                FindObjectOfType<AudioManager>().Play("Death");
                 hpbarPanel.SetActive(false);
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);

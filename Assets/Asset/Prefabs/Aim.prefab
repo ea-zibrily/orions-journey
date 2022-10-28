@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8257234356331658502}
   - component: {fileID: 8257234356331658503}
-  - component: {fileID: 179975594680541264}
+  - component: {fileID: 5456211387591335659}
   m_Layer: 0
   m_Name: Aim
   m_TagString: Aim
@@ -177,7 +177,7 @@ MonoBehaviour:
   firePos: {fileID: 8257234355557257038}
   fireForce: 20
   damage: 35
---- !u!82 &179975594680541264
+--- !u!82 &5456211387591335659
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
