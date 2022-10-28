@@ -45,6 +45,7 @@ public class MainMenu : MonoBehaviour
             }
             else
             {
+                FindObjectOfType<AudioManager>().Play("GameStart");
                 faderObj.SetActive(false);
                 anim.SetTrigger("StartGame");
                 isBack = true;
