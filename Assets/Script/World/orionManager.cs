@@ -36,6 +36,10 @@ public class orionManager : MonoBehaviour
     public lava lava;
     SpriteRenderer mySprite;
 
+    [Header("Fader")]
+    public FaderScene faderSceneScript;
+    public string thisLevelName;
+
     void Awake()
     {
         mySprite = GetComponent<SpriteRenderer>();
@@ -44,7 +48,7 @@ public class orionManager : MonoBehaviour
         Instantiate(weaponPrefabs[weaponIndex], transform);
 
         coin = PlayerPrefs.GetInt("totalCoin", 0);
-        GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
+        // GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
         Debug.Log(check);
     }
 
@@ -95,7 +99,9 @@ public class orionManager : MonoBehaviour
                 health[healthIndex].SetActive(false);
             }
             Instantiate(deathVfx, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            faderSceneScript.SceneLoad(thisLevelName);
+            gameObject.SetActive(false);
+            // Destroy(gameObject);
         }
     }
 
@@ -145,7 +151,9 @@ public class orionManager : MonoBehaviour
         {
             healthIndex = 0;
             Instantiate(deathVfx, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            faderSceneScript.SceneLoad(thisLevelName);
+            gameObject.SetActive(false);
+            // Destroy(gameObject);
         }
         
     }
