@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using CodeMonkey.Utils;
+using UnityEngine.Audio;
 
 public class shoot : MonoBehaviour
 {
@@ -20,7 +21,11 @@ public class shoot : MonoBehaviour
     private GameObject lavaObj;
     private lava lavaScript;
 
+    //audio ref
+    private AudioSource sound;
+
     void Start(){
+        sound = GetComponent<AudioSource>();
         playerObj = GameObject.FindGameObjectWithTag("Player");
         player = playerObj.GetComponent<playerController>();
 
@@ -46,6 +51,7 @@ public class shoot : MonoBehaviour
             transform.localScale = aimLocalScale;
 
             if(Input.GetMouseButtonDown(0)){
+                sound.Play();
                 lavaScript.enabled = true;
                 Shoot();
                 cinemaShake.Instance.shakeCamera(3f, 0.1f);

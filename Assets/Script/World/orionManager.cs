@@ -62,6 +62,7 @@ public class orionManager : MonoBehaviour
     {
         if(collision.CompareTag("coin"))
         {
+            FindObjectOfType<AudioManager>().Play("Coin");
             getCoin();
             Destroy(collision.gameObject);
         }
@@ -99,6 +100,7 @@ public class orionManager : MonoBehaviour
                 healthIndex--;
                 health[healthIndex].SetActive(false);
             }
+            FindObjectOfType<AudioManager>().Play("Death");
             Instantiate(deathVfx, transform.position, Quaternion.identity);
             faderSceneScript.SceneLoad(thisLevelName);
             gameObject.SetActive(false);
@@ -130,6 +132,7 @@ public class orionManager : MonoBehaviour
 
     IEnumerator iframesCo()
     {
+        FindObjectOfType<AudioManager>().Play("GotHit");
         healthIndex--;
         health[healthIndex].SetActive(false);
 
@@ -151,6 +154,7 @@ public class orionManager : MonoBehaviour
         if(healthIndex < 1)
         {
             healthIndex = 0;
+            FindObjectOfType<AudioManager>().Play("Death");
             Instantiate(deathVfx, transform.position, Quaternion.identity);
             faderSceneScript.SceneLoad(thisLevelName);
             gameObject.SetActive(false);

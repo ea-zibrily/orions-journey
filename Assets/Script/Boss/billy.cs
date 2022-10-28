@@ -42,7 +42,7 @@ public class billy : MonoBehaviour
 
     [Header("Laser")]
     public GameObject laserObj;
-
+    
     // public GameObject platform;
     // private platformBilly platformBilly;
 
@@ -141,6 +141,7 @@ public class billy : MonoBehaviour
         if (destroyBilly <= 0)
         {
             Destroy(spawnerPlatform);
+            FindObjectOfType<AudioManager>().Play("Death");
             Instantiate(deathVfx, transform.position, Quaternion.identity);
             Instantiate(deathVfx2, transform.position, Quaternion.identity);
             hpbarPanel.SetActive(false);
