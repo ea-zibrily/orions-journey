@@ -34,10 +34,10 @@ public class gressor : MonoBehaviour
         //manager refs ada di start menyesuaikan isi variabel di scrip boss3Manager
         //</summary>
 
-        bossMgrObj = GameObject.Find("Boss3");
+        bossMgrObj = GameObject.Find("GrandSpace");
         bossMgr = bossMgrObj.GetComponent<boss3Manager>();
 
-        shootDmg = GameObject.FindGameObjectWithTag("aim").GetComponent<shoot>();
+        shootDmg = GameObject.FindGameObjectWithTag("Aim").GetComponent<shoot>();
     }
 
     // Update is called once per frame

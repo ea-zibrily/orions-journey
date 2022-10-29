@@ -35,11 +35,11 @@ public class pursues : MonoBehaviour
         //hasPlayerPos = false;
 
         //manager
-        bossMgrObj = GameObject.Find("Boss3");
+        bossMgrObj = GameObject.Find("GrandSpace");
         bossMgr = bossMgrObj.GetComponent<boss3Manager>();
 
         //shoot/aim dmg
-        shootDmg = GameObject.FindGameObjectWithTag("aim").GetComponent<shoot>();
+        shootDmg = GameObject.FindGameObjectWithTag("Aim").GetComponent<shoot>();
     }
 
     // Update is called once per frame

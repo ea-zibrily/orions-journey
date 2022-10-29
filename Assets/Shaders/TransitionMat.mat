@@ -41,7 +41,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_7cc3e9ffcf674423a27536833a73a1cc: 0
-    - _CutOff: 1.0828954
+    - _CutOff: 1.1
     - _Smoothing: 0.1
     m_Colors:
     - Color_34476d441ec14b3e8eaf071637522bdf: {r: 1, g: 1, b: 1, a: 0}

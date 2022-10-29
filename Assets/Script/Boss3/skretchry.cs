@@ -18,8 +18,7 @@ public class skretchry : MonoBehaviour
     [Header("Attack")]
     public float startTimeBtweenShoot;
     float btweenShoot;
-    public GameObject arrow1;
-    public GameObject arrow2;
+    public GameObject arrow;
 
     [Header("Reference")]
     public GameObject deathParticle;
@@ -42,13 +41,12 @@ public class skretchry : MonoBehaviour
         wayPoint[2] = GameObject.Find("point3").transform;
         wayPoint[3] = GameObject.Find("point4").transform;
 
-
         //manager
-        bossMgrObj = GameObject.Find("Boss3");
+        bossMgrObj = GameObject.Find("GrandSpace");
         bossMgr = bossMgrObj.GetComponent<boss3Manager>();
 
         //shoot/aim dmg
-        shootDmg = GameObject.FindGameObjectWithTag("aim").GetComponent<shoot>();
+        shootDmg = GameObject.FindGameObjectWithTag("Aim").GetComponent<shoot>();
 
         //<summary>
         //pake random point biar arah gerak boss random
@@ -109,41 +107,30 @@ public class skretchry : MonoBehaviour
         if(Vector2.Distance(transform.position, wayPoint[0].position) <= 0.01f)
         {
             pointTarget = wayPoint[1];
-            transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+            //transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+            mySp.flipX = false;
 
-            /*
-            //karena gameobject terpisah jadi gabisa pake flip
-            mySp.flipX = true;
-            */
         }
         if(Vector2.Distance(transform.position, wayPoint[1].position) <= 0.01f)
         {
             pointTarget = wayPoint[2];
-            transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
-            /*
-            //karena gameobject terpisah jadi gabisa pake flip
-            //mySp.flipX = false;
-            */
+            //transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
+            mySp.flipX = true;
+           
         }
         if (Vector2.Distance(transform.position, wayPoint[2].position) <= 0.01f)
         {
             pointTarget = wayPoint[3];
-            transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
+            //transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
+            mySp.flipX = true;
 
-            /*
-            //karena gameobject terpisah jadi gabisa pake flip
-            //mySp.flipX = false;
-            */
         }
         if (Vector2.Distance(transform.position, wayPoint[3].position) <= 0.01f)
         {
             pointTarget = wayPoint[0];
-            transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+            //transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+            mySp.flipX = false;
 
-            /*
-            //karena gameobject terpisah jadi gabisa pake flip
-            //mySp.flipX = false;
-            */
         }
     }
 
@@ -161,8 +148,7 @@ public class skretchry : MonoBehaviour
     {
         if (btweenShoot <= 0)
         {
-            Instantiate(arrow1, transform.position, Quaternion.identity);
-            Instantiate(arrow2, transform.position, Quaternion.identity);
+            Instantiate(arrow, transform.position, Quaternion.identity);
             btweenShoot = startTimeBtweenShoot;
         }
         else
