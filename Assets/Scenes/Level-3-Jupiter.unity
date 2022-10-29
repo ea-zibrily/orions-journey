@@ -1450,14 +1450,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 7
-  skretchLimit: 10
-  pursLimit: 14
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 0
   isSkretch: 0
-  gressObject: {fileID: 1492067452}
-  skretchObject: {fileID: 878806376}
-  pursObject: {fileID: 5171819}
+  gressObject: {fileID: 2958790958581948130, guid: ec4e20047d876b84a85f290d3a0259cb, type: 3}
+  skretchObject: {fileID: 6919869910988494795, guid: 1b74a5f7f77e82d49b335409b8ae9f34, type: 3}
+  pursObject: {fileID: 4142425925285079792, guid: f61780195d3a3e245b538a6a5938a4cf, type: 3}
   cutScene: {fileID: 1702678449}
 --- !u!1001 &38760470
 PrefabInstance:
@@ -1564,14 +1564,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 7
-  skretchLimit: 10
-  pursLimit: 14
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 1
   isSkretch: 0
-  gressObject: {fileID: 717884406}
-  skretchObject: {fileID: 878806376}
-  pursObject: {fileID: 5171819}
+  gressObject: {fileID: 2958790958581948130, guid: ec4e20047d876b84a85f290d3a0259cb, type: 3}
+  skretchObject: {fileID: 6919869910988494795, guid: 1b74a5f7f77e82d49b335409b8ae9f34, type: 3}
+  pursObject: {fileID: 4142425925285079792, guid: f61780195d3a3e245b538a6a5938a4cf, type: 3}
   cutScene: {fileID: 1702678449}
 --- !u!1 &42701834
 GameObject:
@@ -2342,13 +2342,15 @@ PlayableDirector:
   m_GameObject: {fileID: 57273160}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 86ef9e59363506446b6405d615ceedef, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 21db6b220b0defd49ad9cb43ad896c48, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 6519116603311213448, guid: 86ef9e59363506446b6405d615ceedef, type: 2}
+    value: {fileID: 57273163}
+  - key: {fileID: 3533030321450301271, guid: 21db6b220b0defd49ad9cb43ad896c48, type: 2}
     value: {fileID: 57273163}
   m_ExposedReferences:
     m_References: []
@@ -3075,7 +3077,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c7ed787fc123e84781455d545225828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 125
+  maxHp: 2000
   hp: 0
   hitSpeed: 0.005
   hpImage: {fileID: 1779056047}
@@ -3088,6 +3090,9 @@ MonoBehaviour:
   - {fileID: 383554859}
   - {fileID: 1591890996}
   - {fileID: 297909781}
+  - {fileID: 1316073381}
+  - {fileID: 1218624674}
+  - {fileID: 1351912082}
 --- !u!4 &76545785
 Transform:
   m_ObjectHideFlags: 0
@@ -4014,9 +4019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 3
-  skretchLimit: 4
-  pursLimit: 7
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 0
   isSkretch: 0
   gressObject: {fileID: 2283848086018720073, guid: 07a4d3b6413ee2647a9c38dc771bfffe, type: 3}
@@ -10165,9 +10170,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 3
-  skretchLimit: 4
-  pursLimit: 7
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 0
   isSkretch: 0
   gressObject: {fileID: 2283848086018720073, guid: 07a4d3b6413ee2647a9c38dc771bfffe, type: 3}
@@ -12829,9 +12834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 3
-  skretchLimit: 4
-  pursLimit: 7
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 1
   isSkretch: 0
   gressObject: {fileID: 2283848086018720073, guid: 07a4d3b6413ee2647a9c38dc771bfffe, type: 3}
@@ -13595,14 +13600,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 7
-  skretchLimit: 10
-  pursLimit: 14
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 0
   isSkretch: 1
-  gressObject: {fileID: 1492067452}
-  skretchObject: {fileID: 878806376}
-  pursObject: {fileID: 5171819}
+  gressObject: {fileID: 2958790958581948130, guid: ec4e20047d876b84a85f290d3a0259cb, type: 3}
+  skretchObject: {fileID: 6919869910988494795, guid: 1b74a5f7f77e82d49b335409b8ae9f34, type: 3}
+  pursObject: {fileID: 4142425925285079792, guid: f61780195d3a3e245b538a6a5938a4cf, type: 3}
   cutScene: {fileID: 1702678449}
 --- !u!1001 &404362170
 PrefabInstance:
@@ -28848,7 +28853,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 864468653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.16, y: 252.41, z: -1.3163317}
+  m_LocalPosition: {x: -21.9, y: 237.2, z: -1.3163317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -33003,15 +33008,17 @@ PlayableDirector:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 975784930}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 0d3b0dfd2b7a0d646aaa5318d1fc8712, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 57010b5551eaa634593c74458f47ab59, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: -5755252999948720718, guid: 0d3b0dfd2b7a0d646aaa5318d1fc8712, type: 2}
+    value: {fileID: 975784933}
+  - key: {fileID: 494000563062444991, guid: 57010b5551eaa634593c74458f47ab59, type: 2}
     value: {fileID: 975784933}
   m_ExposedReferences:
     m_References: []
@@ -37292,9 +37299,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 3
-  skretchLimit: 4
-  pursLimit: 7
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 0
   isSkretch: 1
   gressObject: {fileID: 2283848086018720073, guid: 07a4d3b6413ee2647a9c38dc771bfffe, type: 3}
@@ -41752,7 +41759,7 @@ GameObject:
   m_Layer: 0
   m_Name: SkretchrySpawnL
   m_TagString: Boss3
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 3936346786652291628, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -41782,15 +41789,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 7
-  skretchLimit: 10
-  pursLimit: 14
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 0
   isSkretch: 1
-  gressObject: {fileID: 1127644761}
-  skretchObject: {fileID: 0}
-  pursObject: {fileID: 0}
-  cutScene: {fileID: 0}
+  gressObject: {fileID: 2958790958581948130, guid: ec4e20047d876b84a85f290d3a0259cb, type: 3}
+  skretchObject: {fileID: 6919869910988494795, guid: 1b74a5f7f77e82d49b335409b8ae9f34, type: 3}
+  pursObject: {fileID: 4142425925285079792, guid: f61780195d3a3e245b538a6a5938a4cf, type: 3}
+  cutScene: {fileID: 1702678449}
 --- !u!1001 &1219700687
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43819,9 +43826,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 3
-  skretchLimit: 4
-  pursLimit: 7
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 1
   isSkretch: 0
   gressObject: {fileID: 2283848086018720073, guid: 07a4d3b6413ee2647a9c38dc771bfffe, type: 3}
@@ -45354,7 +45361,7 @@ GameObject:
   m_Layer: 0
   m_Name: GressorSpawnL
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -45384,15 +45391,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 7
-  skretchLimit: 10
-  pursLimit: 14
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 1
   isSkretch: 0
-  gressObject: {fileID: 0}
-  skretchObject: {fileID: 0}
-  pursObject: {fileID: 0}
-  cutScene: {fileID: 0}
+  gressObject: {fileID: 2958790958581948130, guid: ec4e20047d876b84a85f290d3a0259cb, type: 3}
+  skretchObject: {fileID: 6919869910988494795, guid: 1b74a5f7f77e82d49b335409b8ae9f34, type: 3}
+  pursObject: {fileID: 4142425925285079792, guid: f61780195d3a3e245b538a6a5938a4cf, type: 3}
+  cutScene: {fileID: 1702678449}
 --- !u!1001 &1318103895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46480,7 +46487,7 @@ GameObject:
   m_Layer: 0
   m_Name: PursuesSpawnL
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -46510,15 +46517,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 7
-  skretchLimit: 10
-  pursLimit: 14
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 0
   isSkretch: 0
-  gressObject: {fileID: 1127644761}
-  skretchObject: {fileID: 0}
-  pursObject: {fileID: 0}
-  cutScene: {fileID: 0}
+  gressObject: {fileID: 2958790958581948130, guid: ec4e20047d876b84a85f290d3a0259cb, type: 3}
+  skretchObject: {fileID: 6919869910988494795, guid: 1b74a5f7f77e82d49b335409b8ae9f34, type: 3}
+  pursObject: {fileID: 4142425925285079792, guid: f61780195d3a3e245b538a6a5938a4cf, type: 3}
+  cutScene: {fileID: 1702678449}
 --- !u!1001 &1352624808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47587,6 +47594,7 @@ Transform:
   - {fileID: 949590796}
   - {fileID: 1390279329}
   - {fileID: 1728977021}
+  - {fileID: 2095180800}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47822,13 +47830,15 @@ PlayableDirector:
   m_GameObject: {fileID: 1399351742}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 45d600e402d0a934e8263e93b8a3e097, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: f40039ea8e66252479dfdf8a7f71cbaf, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 4146488169252385113, guid: 45d600e402d0a934e8263e93b8a3e097, type: 2}
+    value: {fileID: 1399351745}
+  - key: {fileID: -8069054249541181233, guid: f40039ea8e66252479dfdf8a7f71cbaf, type: 2}
     value: {fileID: 1399351745}
   m_ExposedReferences:
     m_References: []
@@ -55152,9 +55162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dde94e6312522174ca41f54488ab2dd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gressLimit: 3
-  skretchLimit: 4
-  pursLimit: 7
+  gressLimit: 10
+  skretchLimit: 15
+  pursLimit: 20
   isGress: 0
   isSkretch: 1
   gressObject: {fileID: 2283848086018720073, guid: 07a4d3b6413ee2647a9c38dc771bfffe, type: 3}
@@ -56350,13 +56360,11 @@ CompositeCollider2D:
         Y: 2440000041
       - X: -219999900
         Y: 2440000100
-      - X: -159999959
+      - X: -170000100
         Y: 2440000100
-      - X: -159999900
-        Y: 2440000041
-      - X: -159999900
+      - X: -170000100
         Y: 2449999913
-      - X: -159999959
+      - X: -170000041
         Y: 2449999972
       - X: 69999900
         Y: 2449999972
@@ -57088,18 +57096,6 @@ CompositeCollider2D:
         Y: 1960000000
       - X: 90000000
         Y: 1960000000
-    - - X: 10000000
-        Y: 1950000000
-      - X: 0
-        Y: 1950000000
-      - X: 0
-        Y: 1970000000
-      - X: -10000000
-        Y: 1970000000
-      - X: -10000000
-        Y: 1940000000
-      - X: 10000000
-        Y: 1940000000
     - - X: -60000000
         Y: 1960000000
       - X: -80000000
@@ -57112,6 +57108,18 @@ CompositeCollider2D:
         Y: 1950000000
       - X: -60000000
         Y: 1950000000
+    - - X: 10000000
+        Y: 1950000000
+      - X: 0
+        Y: 1950000000
+      - X: 0
+        Y: 1970000000
+      - X: -10000000
+        Y: 1970000000
+      - X: -10000000
+        Y: 1940000000
+      - X: 10000000
+        Y: 1940000000
     - - X: 60000000
         Y: 1940000000
       - X: 40000000
@@ -57248,18 +57256,6 @@ CompositeCollider2D:
         Y: 1690000000
       - X: -30000000
         Y: 1690000000
-    - - X: 20000000
-        Y: 1660000000
-      - X: 0
-        Y: 1660000000
-      - X: 0
-        Y: 1670000000
-      - X: -10000000
-        Y: 1670000000
-      - X: -10000000
-        Y: 1650000000
-      - X: 20000000
-        Y: 1650000000
     - - X: -50000000
         Y: 1650000000
       - X: -60000000
@@ -57280,6 +57276,18 @@ CompositeCollider2D:
         Y: 1640000000
       - X: -50000000
         Y: 1640000000
+    - - X: 20000000
+        Y: 1660000000
+      - X: 0
+        Y: 1660000000
+      - X: 0
+        Y: 1670000000
+      - X: -10000000
+        Y: 1670000000
+      - X: -10000000
+        Y: 1650000000
+      - X: 20000000
+        Y: 1650000000
     - - X: 0
         Y: 1490000000
       - X: 10000000
@@ -57376,6 +57384,14 @@ CompositeCollider2D:
         Y: 1500000000
       - X: 90000000
         Y: 1500000000
+    - - X: 50000000
+        Y: 1480000000
+      - X: 40000000
+        Y: 1480000000
+      - X: 40000000
+        Y: 1470000000
+      - X: 50000000
+        Y: 1470000000
     - - X: -50000000
         Y: 1480000000
       - X: -70000000
@@ -57392,14 +57408,6 @@ CompositeCollider2D:
         Y: 1440000000
       - X: -50000000
         Y: 1440000000
-    - - X: 50000000
-        Y: 1480000000
-      - X: 40000000
-        Y: 1480000000
-      - X: 40000000
-        Y: 1470000000
-      - X: 50000000
-        Y: 1470000000
     - - X: 40000000
         Y: 1470000000
       - X: 20000000
@@ -58051,8 +58059,8 @@ CompositeCollider2D:
       - {x: -16.000027, y: 239.00002}
       - {x: -23.00001, y: 239.00005}
       - {x: -22.999975, y: 244}
-      - {x: -15.99999, y: 244.00003}
-      - {x: -15.999967, y: 244.99998}
+      - {x: -17.00001, y: 244.00006}
+      - {x: -16.999975, y: 244.99998}
       - {x: 16.00001, y: 244.99997}
       - {x: 16.00004, y: 244}
       - {x: 22.99999, y: 243.99995}
@@ -95970,16 +95978,6 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: -17, y: 244, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 11
-      m_TileSpriteIndex: 2
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 16, y: 244, z: 0}
     second:
       serializedVersion: 2
@@ -98814,7 +98812,7 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: ff7b5122c9473e64ea5500456a3c74e0, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 432
+  - m_RefCount: 431
     m_Data: {fileID: 11400000, guid: 649b40a94d090cc4b95d9afd30321f26, type: 2}
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -98845,7 +98843,7 @@ Tilemap:
     m_Data: {fileID: 7437983360096534302, guid: 496b69953a2da894594d5e162dacc203, type: 3}
   - m_RefCount: 397
     m_Data: {fileID: -3371796444000222526, guid: 90855e580270239428cb88adca46b058, type: 3}
-  - m_RefCount: 432
+  - m_RefCount: 431
     m_Data: {fileID: 782914780412656159, guid: 6be428c635cd5964f85d335114298b00, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 3964603896598969028, guid: de54e61c07fef0f4ebe970cba03bfabf, type: 3}
@@ -98862,7 +98860,7 @@ Tilemap:
   - m_RefCount: 2
     m_Data: {fileID: 2201162438737584570, guid: 6be428c635cd5964f85d335114298b00, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 4001
+  - m_RefCount: 4000
     m_Data:
       e00: 1
       e01: 0
@@ -98881,7 +98879,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 4001
+  - m_RefCount: 4000
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -102824,10 +102822,16 @@ MonoBehaviour:
   - {fileID: 1127644763}
   - {fileID: 1426737605}
   - {fileID: 809471083}
+  - {fileID: 57273162}
+  - {fileID: 1399351744}
+  - {fileID: 975784932}
   spawner:
   - {fileID: 383554859}
   - {fileID: 1591890996}
   - {fileID: 297909781}
+  - {fileID: 1316073381}
+  - {fileID: 1218624674}
+  - {fileID: 1351912082}
   hpPanel: {fileID: 805672669}
   boss3Anim: {fileID: 1169455961}
   animTime: 2
@@ -116604,6 +116608,68 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8383088270625933456, guid: 9f00823450d17a6489d6d4b27c796b52, type: 3}
   m_PrefabInstance: {fileID: 2094751778}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2095180799
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1389898179}
+    m_Modifications:
+    - target: {fileID: 4197706537167222741, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_Name
+      value: Checkpoint (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.31
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 192.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+--- !u!4 &2095180800 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4197706537167222743, guid: 457b50fb6591bbc44b42ff3354fe24d2, type: 3}
+  m_PrefabInstance: {fileID: 2095180799}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2095483547
 PrefabInstance:

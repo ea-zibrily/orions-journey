@@ -53,7 +53,7 @@ public class boss3Manager : MonoBehaviour
         {
             isDeath = true;
             hpPanel.SetActive(false);
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
                 spawner[i].gameObject.SetActive(false);
             }

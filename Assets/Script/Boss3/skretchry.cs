@@ -89,7 +89,7 @@ public class skretchry : MonoBehaviour
         else
         {
             myAnim.SetTrigger("attack");
-            //shootPlayer();
+            shootPlayer();
         }
 
         if (bossMgr.isDeath)
