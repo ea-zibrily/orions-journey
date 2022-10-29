@@ -97,7 +97,7 @@ public class gameManager : MonoBehaviour
         if(currentLevel >= PlayerPrefs.GetInt("LevelUnlocked")){
             PlayerPrefs.SetInt("LevelUnlocked", currentLevel + 1);
         }
-
+        orionManager.LastCheckPointPos = new Vector2(0, 0);
         faderObj.SetActive(true);
         Time.timeScale = 1;
         faderSceneScript.SceneLoad(mainMenuName);
@@ -105,6 +105,7 @@ public class gameManager : MonoBehaviour
 
     public void selectLevel()
     {
+        orionManager.LastCheckPointPos = new Vector2(0, 0);
         faderObj.SetActive(true);
         Time.timeScale = 1;
         faderSceneScript.SceneLoad(mainMenuName);
