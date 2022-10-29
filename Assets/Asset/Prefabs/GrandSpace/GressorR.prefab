@@ -184,7 +184,7 @@ MonoBehaviour:
   whatisGress:
     serializedVersion: 2
     m_Bits: 128
-  deathParticle: {fileID: 6782433998676124913, guid: 4cbc3e7419ea2db4f839b23b34e282e8, type: 3}
+  deathParticle: {fileID: 105419891030640636, guid: e3fc9c8a9b9c3f649af82050c5b7ecfa, type: 3}
 --- !u!95 &7810809345706673021
 Animator:
   serializedVersion: 3

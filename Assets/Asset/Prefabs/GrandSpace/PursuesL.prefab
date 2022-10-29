@@ -183,7 +183,7 @@ MonoBehaviour:
   whatisPursues:
     serializedVersion: 2
     m_Bits: 128
-  deathParticle: {fileID: 6782433998676124913, guid: 4cbc3e7419ea2db4f839b23b34e282e8, type: 3}
+  deathParticle: {fileID: 8147429196213431339, guid: e2eb3849bd73d4c429dcff996e00535c, type: 3}
 --- !u!95 &2269201171954419831
 Animator:
   serializedVersion: 3

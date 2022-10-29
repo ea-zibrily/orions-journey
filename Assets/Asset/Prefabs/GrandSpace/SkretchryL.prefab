@@ -185,7 +185,7 @@ MonoBehaviour:
     m_Bits: 128
   startTimeBtweenShoot: 1
   arrow: {fileID: 4418121282400916516, guid: c421c6a6cf44e4f4fbe507d1cf401c52, type: 3}
-  deathParticle: {fileID: 6782433998676124913, guid: 4cbc3e7419ea2db4f839b23b34e282e8, type: 3}
+  deathParticle: {fileID: 2461954702437612511, guid: 793b5affb7d1c2f408f111526a3691a9, type: 3}
 --- !u!95 &752308118881286949
 Animator:
   serializedVersion: 3
