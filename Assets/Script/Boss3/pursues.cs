@@ -17,6 +17,7 @@ public class pursues : MonoBehaviour
 
     [Header("Reference")]
     Rigidbody2D myRb;
+    Animator myAnim;
     public GameObject deathParticle;
     GameObject bossMgrObj;
     boss3Manager bossMgr;
@@ -25,6 +26,7 @@ public class pursues : MonoBehaviour
     private void Awake()
     {
         myRb = GetComponent<Rigidbody2D>();
+        myAnim = GetComponent<Animator>();
     }
 
     void Start()
@@ -45,8 +47,14 @@ public class pursues : MonoBehaviour
     {
         if(isOnArea())
         {
+            myAnim.SetTrigger("attack");
             purAttack();
         }
+        else
+        {
+            myAnim.SetTrigger("idle");
+        }
+            
         
         if(bossMgr.isDeath)
         {
