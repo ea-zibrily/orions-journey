@@ -92,6 +92,17 @@ public class gameManager : MonoBehaviour
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void MainMenuFromGameOver(){
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        if(currentLevel >= PlayerPrefs.GetInt("LevelUnlocked")){
+            PlayerPrefs.SetInt("LevelUnlocked", currentLevel + 1);
+        }
+
+        faderObj.SetActive(true);
+        Time.timeScale = 1;
+        faderSceneScript.SceneLoad(mainMenuName);
+    }
+
     public void selectLevel()
     {
         faderObj.SetActive(true);
