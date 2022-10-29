@@ -8,7 +8,6 @@ public class boss3CC : MonoBehaviour
     public PlayableDirector[] boss3;
     public GameObject[] spawner;
     public GameObject hpPanel;
-    public GameObject mapLimit;
     public Animator boss3Anim;
     public float animTime;
     public bool csDone;
@@ -26,7 +25,6 @@ public class boss3CC : MonoBehaviour
         if(csDone)
         {
             hpPanel.SetActive(true);
-            mapLimit.GetComponent<Collider2D>().enabled = true;
 
             spawner[0].SetActive(true);
             spawner[1].SetActive(true);

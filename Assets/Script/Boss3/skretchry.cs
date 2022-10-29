@@ -18,7 +18,8 @@ public class skretchry : MonoBehaviour
     [Header("Attack")]
     public float startTimeBtweenShoot;
     float btweenShoot;
-    public GameObject arrow;
+    public GameObject arrow1;
+    public GameObject arrow2;
 
     [Header("Reference")]
     public GameObject deathParticle;
@@ -26,10 +27,12 @@ public class skretchry : MonoBehaviour
     boss3Manager bossMgr;
     shoot shootDmg;
     SpriteRenderer mySp;
+    Animator myAnim;
 
     void Awake()
     {
         mySp = GetComponent<SpriteRenderer>();
+        myAnim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -82,11 +85,13 @@ public class skretchry : MonoBehaviour
         //</summary>
         if (!thereAPlayer())
         {
+            myAnim.SetTrigger("idle");
             skretchMove();
         }
         else
         {
-            shootPlayer();
+            myAnim.SetTrigger("attack");
+            //shootPlayer();
         }
 
         if (bossMgr.isDeath)
@@ -152,11 +157,12 @@ public class skretchry : MonoBehaviour
         Gizmos.DrawWireSphere(skretchRange.position, radiusRange);
     }
 
-    void shootPlayer()
+    public void shootPlayer()
     {
         if (btweenShoot <= 0)
         {
-            Instantiate(arrow, transform.position, Quaternion.identity);
+            Instantiate(arrow1, transform.position, Quaternion.identity);
+            Instantiate(arrow2, transform.position, Quaternion.identity);
             btweenShoot = startTimeBtweenShoot;
         }
         else
