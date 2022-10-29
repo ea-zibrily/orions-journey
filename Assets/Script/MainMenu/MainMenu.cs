@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("MainMenuTheme");
         FindObjectOfType<AudioManager>().Stop("InGameTheme");
-
+        
         levelIndex = PlayerPrefs.GetInt("LevelUnlocked", 1);
         for (int i = 0; i < levelButton.Length; i++)
         {
@@ -38,7 +38,7 @@ public class MainMenu : MonoBehaviour
         {
             levelButton[i].interactable = true;
         }
-        
+
         Time.timeScale = 1;
         isBack = false;
         anim = GetComponent<Animator>();
