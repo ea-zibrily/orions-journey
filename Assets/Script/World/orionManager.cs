@@ -101,6 +101,7 @@ public class orionManager : MonoBehaviour
                 health[healthIndex].SetActive(false);
             }
             FindObjectOfType<AudioManager>().Play("Death");
+            FindObjectOfType<AudioManager>().Pause("InGameTheme");
             Instantiate(deathVfx, transform.position, Quaternion.identity);
             faderSceneScript.SceneLoad(thisLevelName);
             gameObject.SetActive(false);
@@ -155,6 +156,7 @@ public class orionManager : MonoBehaviour
         {
             healthIndex = 0;
             FindObjectOfType<AudioManager>().Play("Death");
+            FindObjectOfType<AudioManager>().Pause("InGameTheme");
             Instantiate(deathVfx, transform.position, Quaternion.identity);
             faderSceneScript.SceneLoad(thisLevelName);
             gameObject.SetActive(false);

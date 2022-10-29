@@ -15,6 +15,7 @@ public class checkPoint : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            FindObjectOfType<AudioManager>().Play("Checkpoint");
             orionManager.LastCheckPointPos = transform.position;
             isCheck = true;
             //myAnim.SetTrigger("checkpoint");

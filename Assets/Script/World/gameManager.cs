@@ -84,6 +84,7 @@ public class gameManager : MonoBehaviour
     }
     public void restart()
     {
+        FindObjectOfType<AudioManager>().Pause("InGameTheme");
         faderObj.SetActive(true);
         Time.timeScale = 1;
         orionManager.LastCheckPointPos = new Vector2(0, 0);
