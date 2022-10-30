@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691a989568a71694885557b1f19adf7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nilaiXKiri: 0
-  nilaiXKanan: 8.49
+  nilaiXKiri: 8.9
+  nilaiXKanan: 10
   moveSpeed: 2.5
 --- !u!50 &7801368223722658294
 Rigidbody2D:

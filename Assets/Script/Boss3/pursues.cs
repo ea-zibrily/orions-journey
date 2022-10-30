@@ -108,10 +108,12 @@ public class pursues : MonoBehaviour
         switch(collision.gameObject.tag)
         {
             case "Player":
+                FindObjectOfType<AudioManager>().Play("Death");
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 break;
             case "Bullet":
+                FindObjectOfType<AudioManager>().Play("Death");
                 bossMgr.hp -= shootDmg.damage;
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);

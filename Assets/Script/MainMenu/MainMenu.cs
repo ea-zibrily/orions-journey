@@ -27,16 +27,19 @@ public class MainMenu : MonoBehaviour
     {
         FindObjectOfType<AudioManager>().Play("MainMenuTheme");
         FindObjectOfType<AudioManager>().Stop("InGameTheme");
-        
+
         levelIndex = PlayerPrefs.GetInt("LevelUnlocked", 1);
         for (int i = 0; i < levelButton.Length; i++)
         {
             levelButton[i].interactable = false;
         }
-        
+
         for (int i = 0; i < levelIndex; i++)
         {
-            levelButton[i].interactable = true;
+            if (levelIndex <= 4 && i <= 2)
+            {
+                levelButton[i].interactable = true;
+            }
         }
 
         Time.timeScale = 1;
@@ -105,6 +108,12 @@ public class MainMenu : MonoBehaviour
     public void Back()
     {
         anim.SetTrigger("CloseShop");
+    }
+
+    public void ResetData()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Data reset");
     }
 
     // public void LoadLevelSelect(string sceneName)
