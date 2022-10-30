@@ -76,6 +76,7 @@ public class gressor : MonoBehaviour
         if(collision.CompareTag("Bullet"))
         {
             bossMgr.hp -= shootDmg.damage;
+            FindObjectOfType<AudioManager>().Play("Death");
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

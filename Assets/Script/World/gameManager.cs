@@ -38,10 +38,6 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L)){
-            PlayerPrefs.DeleteAll();
-        }
-
         if (boss == null)
         {
             isGameOver = true;
