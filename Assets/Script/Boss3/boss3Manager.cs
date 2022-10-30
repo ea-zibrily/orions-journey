@@ -17,7 +17,6 @@ public class boss3Manager : MonoBehaviour
 
     [Header("Reference")]
     public bool isDeath;
-    public GameObject deathParticle;
     public GameObject hpPanel;
     private GameObject Aim;
     private shoot shootDmg;

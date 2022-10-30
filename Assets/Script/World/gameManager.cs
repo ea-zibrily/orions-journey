@@ -24,20 +24,28 @@ public class gameManager : MonoBehaviour
 
     private void Awake()
     {
+        /*
         Time.timeScale = 1;
         isGameOver = false;
         pausePanel.SetActive(false);
         gameOverWinUI.SetActive(false);
+        */
     }
 
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("InGameTheme");
         FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
+
+        Time.timeScale = 1;
+        isGameOver = false;
+        pausePanel.SetActive(false);
+        gameOverWinUI.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
+        //delete?
         if(Input.GetKeyDown(KeyCode.L)){
             PlayerPrefs.DeleteAll();
         }
@@ -89,7 +97,6 @@ public class gameManager : MonoBehaviour
         Time.timeScale = 1;
         orionManager.LastCheckPointPos = new Vector2(0, 0);
         faderSceneScript.SceneLoad(thisLevelName);
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void MainMenuFromGameOver(){
@@ -109,7 +116,6 @@ public class gameManager : MonoBehaviour
         faderObj.SetActive(true);
         Time.timeScale = 1;
         faderSceneScript.SceneLoad(mainMenuName);
-        // SceneManager.LoadScene(sceneName);
     }
 
     public void exit()

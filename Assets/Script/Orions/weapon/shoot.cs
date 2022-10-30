@@ -23,6 +23,10 @@ public class shoot : MonoBehaviour
 
     //audio ref
     private AudioSource sound;
+    private void Awake()
+    {
+        this.enabled = true;
+    }
 
     void Start(){
         sound = GetComponent<AudioSource>();
@@ -63,5 +67,6 @@ public class shoot : MonoBehaviour
     public void Shoot(){
         GameObject projectile = Instantiate(bullet, firePos.position, firePos.rotation);
         projectile.GetComponent<Rigidbody2D>().AddForce(firePos.right * fireForce, ForceMode2D.Impulse);
+        //transform.GetComponent<Rigidbody2D>().velocity = ...
     }
 }
