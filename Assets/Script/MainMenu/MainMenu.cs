@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     private bool isStart;
     private bool isInfoDisplay;
     public GameObject planetInfo;
+    public bool onShop;
 
     [Header("Fader")]
     public GameObject faderObj;
@@ -74,10 +75,13 @@ public class MainMenu : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && isBack && !isInfoDisplay)
+        if(!onShop)
         {
-            anim.SetTrigger("Back");
-            isBack = false;
+            if (Input.GetKeyDown(KeyCode.Escape) && isBack && !isInfoDisplay)
+            {
+                anim.SetTrigger("Back");
+                isBack = false;
+            }
         }
     }
 
@@ -103,11 +107,13 @@ public class MainMenu : MonoBehaviour
     public void Shop()
     {
         anim.SetTrigger("OpenShop");
+        onShop = true;
     }
 
     public void Back()
     {
         anim.SetTrigger("CloseShop");
+        onShop = false;
     }
 
     public void ResetData()
