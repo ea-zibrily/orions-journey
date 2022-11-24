@@ -20,7 +20,7 @@ public class orionManager : MonoBehaviour
     [SerializeField] public string check = "sudah cekpoing lur";
     // [SerializeField] public static Vector2 LastCheckPointPos = new Vector2(0, -2.507308f);
     [SerializeField] public static Vector2 LastCheckPointPos;
-    public static Vector2 testBos = new Vector2(2.64f, 206.7f);
+    public static Vector2 testPos = new Vector2(-0.98f, 233.26f);
 
     [Header("Health")]
     [SerializeField] public GameObject[] health;
@@ -49,7 +49,8 @@ public class orionManager : MonoBehaviour
         Instantiate(weaponPrefabs[weaponIndex], transform);
 
         coin = PlayerPrefs.GetInt("totalCoin", 0);
-        GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
+        //GameObject.FindGameObjectWithTag("Player").transform.position = LastCheckPointPos;
+        GameObject.FindGameObjectWithTag("Player").transform.position = testPos;
         Debug.Log(check);
     }
 
@@ -101,6 +102,7 @@ public class orionManager : MonoBehaviour
                 health[healthIndex].SetActive(false);
             }
             FindObjectOfType<AudioManager>().Play("Death");
+            FindObjectOfType<AudioManager>().Pause("InGameTheme");
             Instantiate(deathVfx, transform.position, Quaternion.identity);
             faderSceneScript.SceneLoad(thisLevelName);
             gameObject.SetActive(false);
@@ -155,6 +157,7 @@ public class orionManager : MonoBehaviour
         {
             healthIndex = 0;
             FindObjectOfType<AudioManager>().Play("Death");
+            FindObjectOfType<AudioManager>().Pause("InGameTheme");
             Instantiate(deathVfx, transform.position, Quaternion.identity);
             faderSceneScript.SceneLoad(thisLevelName);
             gameObject.SetActive(false);

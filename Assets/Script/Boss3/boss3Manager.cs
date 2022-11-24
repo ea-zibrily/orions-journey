@@ -17,11 +17,12 @@ public class boss3Manager : MonoBehaviour
 
     [Header("Reference")]
     public bool isDeath;
-    public GameObject deathParticle;
     public GameObject hpPanel;
     private GameObject Aim;
     private shoot shootDmg;
     public GameObject[] spawner;
+
+    public GameObject cameraControl;
 
     // Start is called before the first frame update
     void Start()
@@ -53,10 +54,12 @@ public class boss3Manager : MonoBehaviour
         {
             isDeath = true;
             hpPanel.SetActive(false);
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 6; i++)
             {
                 spawner[i].gameObject.SetActive(false);
             }
+            Destroy(cameraControl);
+            Destroy(gameObject);
         }
     }
 

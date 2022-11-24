@@ -26,10 +26,12 @@ public class skretchry : MonoBehaviour
     boss3Manager bossMgr;
     shoot shootDmg;
     SpriteRenderer mySp;
+    Animator myAnim;
 
     void Awake()
     {
         mySp = GetComponent<SpriteRenderer>();
+        myAnim = GetComponent<Animator>();
     }
     void Start()
     {
@@ -39,13 +41,12 @@ public class skretchry : MonoBehaviour
         wayPoint[2] = GameObject.Find("point3").transform;
         wayPoint[3] = GameObject.Find("point4").transform;
 
-
         //manager
-        bossMgrObj = GameObject.Find("Boss3");
+        bossMgrObj = GameObject.Find("GrandSpace");
         bossMgr = bossMgrObj.GetComponent<boss3Manager>();
 
         //shoot/aim dmg
-        shootDmg = GameObject.FindGameObjectWithTag("aim").GetComponent<shoot>();
+        shootDmg = GameObject.FindGameObjectWithTag("Aim").GetComponent<shoot>();
 
         //<summary>
         //pake random point biar arah gerak boss random
@@ -82,10 +83,12 @@ public class skretchry : MonoBehaviour
         //</summary>
         if (!thereAPlayer())
         {
+            myAnim.SetTrigger("idle");
             skretchMove();
         }
         else
         {
+            myAnim.SetTrigger("attack");
             shootPlayer();
         }
 
@@ -104,41 +107,30 @@ public class skretchry : MonoBehaviour
         if(Vector2.Distance(transform.position, wayPoint[0].position) <= 0.01f)
         {
             pointTarget = wayPoint[1];
-            transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+            //transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+            mySp.flipX = false;
 
-            /*
-            //karena gameobject terpisah jadi gabisa pake flip
-            mySp.flipX = true;
-            */
         }
         if(Vector2.Distance(transform.position, wayPoint[1].position) <= 0.01f)
         {
             pointTarget = wayPoint[2];
-            transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
-            /*
-            //karena gameobject terpisah jadi gabisa pake flip
-            //mySp.flipX = false;
-            */
+            //transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
+            mySp.flipX = true;
+           
         }
         if (Vector2.Distance(transform.position, wayPoint[2].position) <= 0.01f)
         {
             pointTarget = wayPoint[3];
-            transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
+            //transform.localScale = new Vector2(-1.4355f, transform.localScale.y);
+            mySp.flipX = true;
 
-            /*
-            //karena gameobject terpisah jadi gabisa pake flip
-            //mySp.flipX = false;
-            */
         }
         if (Vector2.Distance(transform.position, wayPoint[3].position) <= 0.01f)
         {
             pointTarget = wayPoint[0];
-            transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+            //transform.localScale = new Vector2(1.4355f, transform.localScale.y);
+            mySp.flipX = false;
 
-            /*
-            //karena gameobject terpisah jadi gabisa pake flip
-            //mySp.flipX = false;
-            */
         }
     }
 
@@ -152,7 +144,7 @@ public class skretchry : MonoBehaviour
         Gizmos.DrawWireSphere(skretchRange.position, radiusRange);
     }
 
-    void shootPlayer()
+    public void shootPlayer()
     {
         if (btweenShoot <= 0)
         {
@@ -170,6 +162,7 @@ public class skretchry : MonoBehaviour
         if (collision.CompareTag("Bullet"))
         {
             bossMgr.hp -= shootDmg.damage;
+            FindObjectOfType<AudioManager>().Play("Death");
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

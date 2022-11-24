@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     private bool isStart;
     private bool isInfoDisplay;
     public GameObject planetInfo;
+    public bool onShop;
 
     [Header("Fader")]
     public GameObject faderObj;
@@ -19,10 +20,29 @@ public class MainMenu : MonoBehaviour
     public string marsLevelName;
     public string jupiterLevelName;
 
+    [Header("LevelUnlock")]
+    public Button[] levelButton;
+    private int levelIndex;
+
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("MainMenuTheme");
         FindObjectOfType<AudioManager>().Stop("InGameTheme");
+
+        levelIndex = PlayerPrefs.GetInt("LevelUnlocked", 1);
+        for (int i = 0; i < levelButton.Length; i++)
+        {
+            levelButton[i].interactable = false;
+        }
+
+        for (int i = 0; i < levelIndex; i++)
+        {
+            if (levelIndex <= 4 && i <= 2)
+            {
+                levelButton[i].interactable = true;
+            }
+        }
+
         Time.timeScale = 1;
         isBack = false;
         anim = GetComponent<Animator>();
@@ -55,10 +75,13 @@ public class MainMenu : MonoBehaviour
 
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && isBack && !isInfoDisplay)
+        if(!onShop)
         {
-            anim.SetTrigger("Back");
-            isBack = false;
+            if (Input.GetKeyDown(KeyCode.Escape) && isBack && !isInfoDisplay)
+            {
+                anim.SetTrigger("Back");
+                isBack = false;
+            }
         }
     }
 
@@ -84,11 +107,19 @@ public class MainMenu : MonoBehaviour
     public void Shop()
     {
         anim.SetTrigger("OpenShop");
+        onShop = true;
     }
 
     public void Back()
     {
         anim.SetTrigger("CloseShop");
+        onShop = false;
+    }
+
+    public void ResetData()
+    {
+        PlayerPrefs.DeleteAll();
+        Debug.Log("Data reset");
     }
 
     // public void LoadLevelSelect(string sceneName)

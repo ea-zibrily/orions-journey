@@ -17,6 +17,7 @@ public class pursues : MonoBehaviour
 
     [Header("Reference")]
     Rigidbody2D myRb;
+    Animator myAnim;
     public GameObject deathParticle;
     GameObject bossMgrObj;
     boss3Manager bossMgr;
@@ -25,6 +26,7 @@ public class pursues : MonoBehaviour
     private void Awake()
     {
         myRb = GetComponent<Rigidbody2D>();
+        myAnim = GetComponent<Animator>();
     }
 
     void Start()
@@ -33,11 +35,11 @@ public class pursues : MonoBehaviour
         //hasPlayerPos = false;
 
         //manager
-        bossMgrObj = GameObject.Find("Boss3");
+        bossMgrObj = GameObject.Find("GrandSpace");
         bossMgr = bossMgrObj.GetComponent<boss3Manager>();
 
         //shoot/aim dmg
-        shootDmg = GameObject.FindGameObjectWithTag("aim").GetComponent<shoot>();
+        shootDmg = GameObject.FindGameObjectWithTag("Aim").GetComponent<shoot>();
     }
 
     // Update is called once per frame
@@ -45,8 +47,14 @@ public class pursues : MonoBehaviour
     {
         if(isOnArea())
         {
+            myAnim.SetTrigger("attack");
             purAttack();
         }
+        else
+        {
+            myAnim.SetTrigger("idle");
+        }
+            
         
         if(bossMgr.isDeath)
         {
@@ -100,10 +108,12 @@ public class pursues : MonoBehaviour
         switch(collision.gameObject.tag)
         {
             case "Player":
+                FindObjectOfType<AudioManager>().Play("Death");
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);
                 break;
             case "Bullet":
+                FindObjectOfType<AudioManager>().Play("Death");
                 bossMgr.hp -= shootDmg.damage;
                 Instantiate(deathParticle, transform.position, Quaternion.identity);
                 Destroy(gameObject);

@@ -24,24 +24,27 @@ public class gameManager : MonoBehaviour
 
     private void Awake()
     {
+        /*
         Time.timeScale = 1;
         isGameOver = false;
         pausePanel.SetActive(false);
         gameOverWinUI.SetActive(false);
+        */
     }
 
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("InGameTheme");
         FindObjectOfType<AudioManager>().Stop("MainMenuTheme");
+
+        Time.timeScale = 1;
+        isGameOver = false;
+        pausePanel.SetActive(false);
+        gameOverWinUI.SetActive(false);
     }
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L)){
-            PlayerPrefs.DeleteAll();
-        }
-
         if (boss == null)
         {
             isGameOver = true;
@@ -84,19 +87,30 @@ public class gameManager : MonoBehaviour
     }
     public void restart()
     {
+        FindObjectOfType<AudioManager>().Pause("InGameTheme");
         faderObj.SetActive(true);
         Time.timeScale = 1;
         orionManager.LastCheckPointPos = new Vector2(0, 0);
         faderSceneScript.SceneLoad(thisLevelName);
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void MainMenuFromGameOver(){
+        int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        if(currentLevel >= PlayerPrefs.GetInt("LevelUnlocked")){
+            PlayerPrefs.SetInt("LevelUnlocked", currentLevel + 1);
+        }
+        orionManager.LastCheckPointPos = new Vector2(0, 0);
+        faderObj.SetActive(true);
+        Time.timeScale = 1;
+        faderSceneScript.SceneLoad(mainMenuName);
     }
 
     public void selectLevel()
     {
+        orionManager.LastCheckPointPos = new Vector2(0, 0);
         faderObj.SetActive(true);
         Time.timeScale = 1;
         faderSceneScript.SceneLoad(mainMenuName);
-        // SceneManager.LoadScene(sceneName);
     }
 
     public void exit()
